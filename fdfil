@@ -1,0 +1,14 @@
+#!/bin/bash
+
+## Filter out information from the compendium files
+
+## Usage: ./filter <tag> <selection-criteria> <output columns>
+## Example: `./filter monster '.cr =="7"' .cr` will list all monsters with CR 7 and output format is <name, CR>
+
+set -euo pipefail
+
+LIST="DnDAppFiles/Compendiums/Full Compendium.xml"
+
+out=$(xq -r '.compendium.'"$1"'[] | select ('"$2"') | [.name, '"$3"'] | @tsv' "$LIST")
+
+echo -e "$out" | column -t -s $'\t'

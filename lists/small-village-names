@@ -1,0 +1,302 @@
+dice: 1d300
+results:
+  1:  Copstage
+  2:  Innswood
+  3:  Northwick
+  4:  Inkdon
+  5:  Summerton
+  6:  Helenton
+  7:  Presthorpe
+  8:  Barnsey
+  9:  Ashbourne
+  10:  Butterpond
+  11:  Darlajex
+  12:  Kriggan
+  13:  Sweetmount
+  14:  Arsington
+  15:  Timbersprout
+  16:  Donaville
+  17:  Goldpeak
+  18:  Windrest
+  19:  Kingsford
+  20:  Clericsfold
+  21:  Wickerton
+  22:  Goodminton
+  23:  Eagletree
+  24:  Knightsroost
+  25:  Hawksmoor
+  26:  Hillcrest
+  27:  Fiddlegreen
+  28:  Dogsbody
+  29:  Hutton
+  30:  Starling
+  31:  Swallowbeak
+  32:  Dundertun
+  33:  Vintnerdale
+  34:  Pottersfield
+  35:  Gracey Peaks
+  36:  Hevensbreath
+  37:  Heathenschurch
+  38:  Windybrook
+  39:  Snowygap
+  40:  Rainvalley
+  41:  Lakedon
+  42:  Bridgefalls
+  43:  Getty's Peak
+  44:  Crestbourne
+  45:  Mintwillow
+  46:  Ropewalker
+  47:  Ryefield
+  48:  Cornhenge
+  49:  Beaksdale
+  50:  Meadhaven
+  51:  Boarsrest
+  52:  Goldcrest
+  53:  Elkhorn
+  54:  Merryhall
+  55:  Winter's End
+  56:  Blythewood
+  57:  Fleet Landing
+  58:  Bowen's Island
+  59:  Tugby
+  60:  Crudgington
+  61:  Nettlebed
+  62:  Clontoe
+  63:  Whiteparish
+  64:  Ballycommon
+  65:  Ilton
+  66:  Headlam
+  67:  Budbrooke
+  68:  Chell Heath
+  69:  Ilminster
+  70:  Swanley
+  71:  Crow
+  72:  Canonbury
+  73:  Wroxham
+  74:  Mancot Royal
+  75:  Ballycrissane
+  76:  Theydon Bois
+  77:  Alwalton
+  78:  Petersham
+  79:  Penrhyn-Llyn
+  80:  Catfield
+  81:  Curdridge
+  82:  Warninglid
+  83:  Lissycasey
+  84:  Althorp
+  85:  Ashwell
+  86:  Woodchurch
+  87:  Bardsey Island
+  88:  Palgrave
+  89:  Messing
+  90:  Bierton
+  91:  Cliftonville
+  92:  Uisge-Labhair
+  93:  Rath
+  94:  Benwick
+  95:  Cowlinge
+  96:  Blockley
+  97:  Brafferton
+  98:  Hammersmith
+  99:  Wallasey
+  100:  Cowling
+  101:  Oweninny
+  102:  Wychavon
+  103:  Chatwell
+  104:  Little Bridge
+  105:  Bunowen
+  106:  Purton
+  107:  Skinningrove
+  108:  Ecclesfield
+  109:  Notton
+  110:  Drumbrughas
+  111:  Lyrenagreena
+  112:  Wiggenhall
+  113:  Curraghlawn
+  114:  Tickenham
+  115:  Clent
+  116:  Leek Wootton
+  117:  Barham
+  118:  Curragh
+  119:  Braunton
+  120:  Wesham
+  121:  Mamble
+  122:  Cumnock
+  123:  Farthinghoe
+  124:  Tandragee
+  125:  Orcheston
+  126:  Springthorpe
+  127:  Ounageeragh
+  128:  Faxfleet
+  129:  Bloxholm
+  130:  Elmley
+  131:  Worlingworth
+  132:  Ashdown Forest
+  133:  Ballycrossaun
+  134:  Wolsingham
+  135:  Corrandulla
+  136:  Blackwood
+  137:  Ballinameen
+  138:  Lifford
+  139:  Rainow
+  140:  Grianan
+  141:  Rainhill
+  142:  Stow
+  143:  Milston
+  144:  Uppington
+  145:  Ashcott
+  146:  Troutbeck
+  147:  Uplowman
+  148:  Allerthorpe
+  149:  Tandridge
+  150:  Tay
+  151:  Alvechurch
+  152:  Munsley
+  153:  Offley
+  154:  Lettermullan
+  155:  Pickworth
+  156:  Ousefleet
+  157:  Sollom
+  158:  Illston on the Hill
+  159:  Codrington
+  160:  Brotherton
+  161:  Branxton
+  162:  Babbacombe
+  163:  Killarney
+  164:  Pyecombe
+  165:  Snaefell
+  166:  Fife
+  167:  Avonmouth
+  168:  Marlborough
+  169:  Aller
+  170:  Willand
+  171:  Dewlish
+  172:  Ballymartin
+  173:  Rodbourne
+  174:  Casnewydd Green
+  175:  Woodstock
+  176:  Totternhoe
+  177:  Tindale
+  178:  West
+  179:  Crux Easton
+  180:  Mere
+  181:  Morvah
+  182:  Ballyheelan
+  183:  Treforys
+  184:  Hawick
+  185:  Weybread
+  186:  Kesgrave
+  187:  Ashmansworth
+  188:  Casnewydd-ar-Wysg
+  189:  Braemar
+  190:  Bredfield
+  191:  Tibthorpe
+  192:  Ardsheelane
+  193:  Aberavon
+  194:  Peckleton
+  195:  Penistone
+  196:  Wakerley
+  197:  Soulby
+  198:  Tilford
+  199:  Veryan
+  200:  Bowthorpe
+  201:  Eriskay
+  202:  Upwaltham
+  203:  Winson
+  204:  Lenham
+  205:  Freckenham
+  206:  Ballygub
+  207:  Wimpstone
+  208:  Portpatrick
+  209:  Orgreave
+  210:  Hedley on the Hill
+  211:  Appledore
+  212:  Blatchington
+  213:  Gortnahoe
+  214:  Astley
+  215:  Glanaman
+  216:  Ballyboghal
+  217:  Tain
+  218:  Shrigley Pott
+  219:  Musbury
+  220:  Bridgnorth
+  221:  Spen
+  222:  Ewyas Harold
+  223:  Patrington
+  224:  Beeford
+  225:  Bardney
+  226:  Palace
+  227:  Pollokshields
+  228:  Penarlâg
+  229:  Sporle
+  230:  Portloman
+  231:  Crewe
+  232:  Siefton
+  233:  Chilwell
+  234:  Berrow Green
+  235:  Dalwhinnie
+  236:  Hilborough
+  237:  Wartnaby
+  238:  Peterborough
+  239:  Alexandria
+  240:  Castley
+  241:  Midgham
+  242:  Ystumllwynarth
+  243:  Pitney
+  244:  Skendleby
+  245:  Grindon
+  246:  Ullauns
+  247:  Hinstock
+  248:  Ballyconneely
+  249:  Tetchill
+  250:  Shrough
+  251:  Saint Bees
+  252:  Farthinghoe
+  253:  Harlow Hill
+  254:  Attenborough
+  255:  Elvetham
+  256:  Chiddingstone
+  257:  Ewell
+  258:  Harvenset
+  259:  Wishleaf
+  260:  Grendale
+  261:  Felderford
+  262:  Stagcross
+  263:  Threader’s Hollow
+  264:  Ashpoint
+  265:  Ravenwood
+  266:  Starrynight
+  267:  Saint Michaelsheights
+  268:  Featherfall
+  269:  Featherfoot
+  270:  Wundwin
+  271:  Maubid
+  272:  San Serif
+  273:  Orcsnout
+  274:  Sevenclaw
+  275:  Crag
+  276:  Wishbone
+  277:  Wagonrut
+  278:  Endtown
+  279:  Mangle
+  280:  Plodburg
+  281:  Twindleton
+  282:  Hollybranch
+  283:  Silverton
+  284:  Dalmhurst
+  285:  Smackover
+  286:  Underthal
+  287:  Little Peachingston
+  288:  Cripple Creek
+  289:  Riddle Reach
+  290:  Guildingston
+  291:  Jebend
+  292:  Shorley-Knott
+  293:  Aeby-on-Sea
+  294:  Smolton
+  295:  Hunose-Weir
+  296:  Fockery
+  297:  Neistermeechia
+  298:  Shavebury
+  299:  Downloe
+  300:  Supbrough

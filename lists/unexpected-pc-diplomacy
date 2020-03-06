@@ -1,0 +1,56 @@
+type: list
+pick: 1
+items:
+  - Send away. "I would heartily recommend you turn around, this is not a great place for tourism."
+  - Disarm or Diplomacy. "Alright, leave your weapons by the door and come talk by the fireside."
+  - Trap. "Okay, wait in the waiting area - to your left, more to your left, forward a bit, to your left, perfect." \*engage trap\*
+  - Diplomacy. "Well you sound like stand up individuals, I'll go get the boss so they can decide."
+  - Diplomacy or Trap. "If you're looking to join the gang/tribe/horde/group/association then follow me to the recruit testing grounds."
+  - Send away. "You don't want to come this way, this is the poison cave, I'm just here to warn people away. We tried just putting up a sign but too many unfortunates ignored it."
+  - Send away and/or Extort. "Hey you's. How's about a bit of coin, and I won't tell anyone I's seen ya? Eh? Eh? I won't even ring this here alarm bell." <Wink>
+  - Send away. "Yeah, I wouldn't recommend coming here unless you're invited, trespassers tend to end up becoming part of the chef's special. Needless to say, don't eat any meat if you do get invited here."
+  - Send Away. On orders of \[setting appropriate authority figure\], this area has been declared off limits, please take your business elsewhere.
+  - Diplomacy. You want through? Alright, the commander is in the tent over there, leave your weapons in the rack before you head in.
+  - Trap. You want through? Alright, the commander is in the tent over there, leave your weapons in the rack before you head in. (The "commander's tent" contains a monster)
+  - Diplomacy. Before you enter, you need to swear an oath of peaceful travel to our god, \[setting appropriate god, non-evil alignment\]. (If sworn, this oath inflicts a curse on anyone that attempts to draw first blood in a conflict within 24 hours of being sworn. Once first blood is drawn, all restrictions are off).
+  - Trap. Before you can enter, you need to swear an oath of peaceful travel to our god, \[setting appropriate god, ideally NE or LE alignment\]. (DC 15 sense motive check to detect something is screwy, DC 20 Knowledge. Religion check to know that a more accurate translation of "peaceful" from the original infernal is "yielding" or "surrendering". Any character who swears the oath can be commanded by a cleric of the god in question, as though affected by a Geas spell).
+  - Turn Away. By order of the \[setting appropriate authority figure\], none may pass here without appropriate authorization, and nothing may be removed without paying the appropriate taxes. Do you have those forms? No? Then I'm sorry, but you must return to the castle and make an appropriate request.
+  - Extort. By order of the \[setting appropriate authority figure\], none may pass here without appropriate authorization, and nothing may be removed without paying the appropriate taxes... but if you didn't get those forms, I could get them squared away for you, with an appropriate fee, of course.
+  - Trap. You want into the caverns? Sure! But before you head down, the bosses insist that everyone have a light source, so we've got torches and fuel here for anyone who needs it. (The torches and fuel are treated to emit a smell that attracts a group of monsters that live deep in the structure. The regular occupants use torches and fuel treated with a compound that repels the same monsters).
+  - Extort. Real talk, if you go in there, the displacer beasts are going to get you. Unless you have one of these (holds up a necklace with a small amulet on it; the amulet smells of herbs and medicine), which drives them off. I've got a couple spares here, but they cost money to make...
+  - Trap. Real talk, if you go in there, the displacer beasts are going to get you. Unless you have one of these (holds up a necklace with a small amulet on it; the amulet smells of herbs and medicine), which drives them off. I've got a couple spares here, but they cost money to make... (the necklace does work as advertised, but also contains a concealed clockwork device. In response to a particular tone and cadence of whistle, the necklace rapidly and forcefully constricts around the throat, causing asphyxiation and preventing casting of spells with verbal components).
+  - Trap. That's above my pay grade, buddy. Leave your weapons here and go talk to my supervisor. She's the third door on the left, don't forget to knock three times. (The guard's supervisor is a medusa, and knocking three times is a code to let her know the people at the door are worth killing. She throws open a concealed viewport in the door, achieving surprise, and uses her petrifying gaze on whoever is on the other side. Initiative is then rolled normally from there).
+  - Send Away. Aww geeze, more adventurers? Killing you lot is getting tedious. Either piss off or come here and get it over with!
+  - Ignore. "Oggork not worry, Shaman said Adventurers not real. They can't hurt Oggork if he do not let them. Only in Oggork Head."
+  - Send away. "You no even look like Adventurers Oggork needs to look out for. Make away, Oggork needs to look out for Adventurers. BUT NOT YOU!"
+  - Barter. "If Oggork tell that Oggork suddenly has Urge to turn life around and start new Carrerrr.. Karier..Carerer... Job as Farmhand. People believe Oggork, yes?"
+  - Flee. "Oggork not paid enough to be made Hurt by angry People. Oggork not paid at all!" (_While making a desperate Scene to throw Weapons away and walk around the Party before running away_)
+  - Barter. "Oggork might be convinced to never has seen angry People while also finding sudden interest in a Stone far down the Valley. Yes?"
+  - Diplomacy. "Parsley! Parsley! Oggork knows what to say when angry People want to talk! Parsley!"
+  - Feint. "Yes yes. Mean People come to help Oggork fulfil mission! Oggork had to wait many many moon here! Better not let Oggork keep you. Quick, pass. Move!"
+  - Various. Welcome, friends! Come in, sit down, and hear tell of the philosophy of Amway.
+  - Various. Look, we're supposed to fight you, but honestly I'd prefer to play a few rounds of 3 Dragon Ante and call it even.
+  - Various. We're selling these fine leather jackets...
+  - Various. Want to join our gang?
+  - Send away. "I wouldn't recommend walking around here in full armour and carrying weapons; people might get the wrong idea"
+  - Avoid or Diplomacy. Crap. More adventurers. ..feigns death.. Which could lead to negotiation/diplomacy. gPlease. I’ll just say I was knocked unconscious. I have to feed my family.
+  - Ambush. Upon further inspection, the NPC isngt dead. They yell “Get ‘em!” triggering an ambush
+  - Avoid. More attempts to feign death. gI swear I’m dead this time. It sure is convenient that I died when you appeared. Like totally really died.”
+  - Send away. (hurried) "How'd you even get here? Take my advice, 'accidents' tend to happen to people when they're not welcome, so get lost and I'll pretend I didn't see you."
+  - Diplomacy. "Normally I'd give you a light beating or call my buddies, but that is a very dangerous-looking (weapon, item, or character). Boss is this way."
+  - Fakeout/Trap. "Yeah, get 'em boss/sic 'em Fido!"(points behind the party at nothing, runs for help)
+  - Trap. "You all make a good poin- POCKET SAND!" (Attempt to injure or take hostage blinded player)
+  - Extort. "Tell you what. You make it worth my while, and I never saw a thing." (Scoff at first offer, haggle it up even if it's amazing)
+  - Send away. gUnless you’re selling mint wafers just go away!”
+  - Avoid. gLet’s exchange a few punches so you have bruises and so I can “”Pass out”” Then you go deal with the boss. Rations have been tight lately”
+  - Ambush. \*in an attempt to buy time for the bad guys, grunt has a conversation with the adventurers. This particular NPC stops after the party and moves his lips in a muttering fashion. If anyone has the observant feat they notice grunt repeating what the party says. A DC 15 perception check reveals a glint of wire between gruntgs fingers. \* He’s actually using message to relay what the adventurers say, and the lair is alerted. Don’t tell the PC’s anything about message. Just let the observant characters or the players who know their spell components shine here. With a 10-14 insight check he seems nervous, with a 15+ he appears to be buying time.
+  - Send away. \*_The Goblin waves their hand in a hovering semi circle\*_ "These are not the Warforged you're looking for..."
+  - Send away. "We don't take kindly to your type round hn'ya!"
+  - Diplomacy. "Want to play a hand of cards/dice/coins? I'm bored as hell!"
+  - Send Away. Out of the door. Line on the left. One cross each. (Life of Brian reference)
+  - Send Away. "You're not supposed to be here. Maybe I can, ah, _persuade_ you to leave?" The goblin pulls back his trouser legs, lifts his feet into the air, exposing well-shaped calves. He winks at you. That's a... <rolls d20> 17 persuasion? <DM looks at the players hopefully>
+  - Diplomacy. Okay fine im the bad guy, you are the good guys, listen i am broke? deeply underqualified, and would much rather go home to my wife and kids. Could you spare me a small tribute of xx gold? I can go home, you did a great thing and i tell you what i know.
+  - Send Away. "If we fight we know this will end up with either you or us dead. But if we let you in, the boss is going to kill us too. Just leave and we pretend that you were never here."
+  - Negotiate. "If we fight we know this will end up with either you or us dead. But if we let you in, the boss is going to kill us too. Look, we hate all of this, but we can't just leave - we tried. Unless you're willing to pretend that we fought and you killed us...?"
+  - Allow past. You can see me? Are you sure you can see me? How many fingers am I holding up? Wow... this invisibility potion sucks. What are you guys doing here anyway? Lookin' for treasure? Sure, have at it. Igm gonna take a nap.
+  - Allow past or Ambush. "Ah, you must be the reinforcements. Come in, we're just about to serve soup. I'll introduce you to the boys there!"

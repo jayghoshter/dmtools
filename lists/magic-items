@@ -1,0 +1,103 @@
+type: list
+pick: 1
+items:
+  - AshenBrush  Once per day, this paintbrush can turn a small object grey.
+  - Atlas Canto A book with a map inside. It updates itself every morning.
+  - Aura Lens A person attuned to these glasses is surrounded by a purple aura.
+  - Aviant Clock A tiny clock that flies with mechanical wings when wound up.
+  - Baker's Paint  This sugar glaze forms beautiful patterns on food when baked.
+  - Bastian Figure A stone cat that protects an attuned creature from minor illness.
+  - Blundercask  An stein that turns any liquid poured in it into cheap ale.
+  - Blurein A person attuned to this river stone looks blurry and out of focus.
+  - Cardinal Plume A quill that makes a creature's writing look like it's written in blood.
+  - Casanova Stitch A ribbon that makes an attuned person immune to seduction attempts.
+  - Citrus Soap A bar of soap that leaves a strong smell of oranges for days after its use.
+  - Choco Chimp A chocolate monkey that quietly asks to be eaten (dear god no).
+  - Dancing Charm A clay charm of a prince that seems to be dancing ballet.
+  - Demon Anklet  Once put on, it can't be removed except using the Remove Curse spell.
+  - Drider Silk A type of grey milk from underdark cows. It settles the stomach.
+  - Dullfeet A pair of plain shoes that change shape and size to fit any humanoid.
+  - Elixir Likar One use. Drinking it makes a creature's eyes flicker with lightning.
+  - Elvish Salve One use. When applied to a humanoid, they look like an elf for 1 day.
+  - Envy's Dye A creature that opens this bottle is dyed green for 1d4 days.
+  - EttercapHand A detached ettercap hand. Allows an attuned person to speak with spiders.
+  - False Lexicon A book that badly translates anything written in it into Draconic.
+  - Fishtail A petrified fish tail on a chain. It ensures good luck in fishing.
+  - Fragment Staff A quarterstaff with broken pieces of stone and glass orbiting its top.
+  - Frost Boa A ring of a snake carved out of unmelting ice. It slowly moves and hisses.
+  - Gaea Sigil A wax symbol that lets an attuned person understand Terran.
+  - Gong of Wilds  This handheld gong makes a sound like a wolf's call.
+  - Gown Lumai A pale blue dress that softly glows under moonlight.
+  - Gyser Pipe A smoking pipe that releases a tiny geyser instead of smoke.
+  - Haunted Lyre A silvery lyre that can play on its own if asked to.
+  - Hedon's Crown A crown made of blooming olive vines that never die or wilt.
+  - Horns of Stone  While attuned to this piece of shale, a person has curled ram horns.
+  - Hyde's Quill A quill that makes a person's handwriting messy and hard to read.
+  - Ichor Diadem  While attuned to this diadem, a person's blood looks flaked with gold.
+  - Ignescent Eye  An eye carved from basaltic rock that glows when elementals are near.
+  - Imperial Sash A purple sash that makes an attuned creature's clothing look fancier.
+  - Ivied Gauntlet ~ While attuned to this gauntlet, a person can cast Druidcraft.
+  - Jade Butterfly  This carved butterfly flies around the head of an attuned person.
+  - Jaw Ignis A salamander jawbone that runs with rivets of illusory fire.
+  - Jewelled Mask A glittering mask that looks like it's made out of uncut crystals.
+  - Jurian's Wand  An attuned creature can use this wand to 'draw' in the air using steam.
+  - Keeneye Glass        A watery marble that can be used as a magnifying glass.
+  - Kindred Veil A green veil that allows an attuned creature to understand Sylvan.
+  - Kinessian Spear A spear with small meteorites that swirl around it.
+  - Kord's Boots A set of boots that let the wearer walk on ice without impediment.
+  - Land's Voice A neutral-toned lipstick that lets the wearer talk to small animals.
+  - Leaf Cape A mantle made by fey out of autumn leaves and forest shadows.
+  - Lethargy Steam A jar of purple steam that calm creatures that breath it in.
+  - Lyle's Pan A frying pan that heats up without a fire on command.
+  - Macabre Tooth A dagger made out of a tooth and supernaturally living flesh.
+  - Megalith Face While attuned to this stone, a person's face looks like a statue's.
+  - Miasma Breath While attuned to this perfume, a person's breath looks like smoke.
+  - Mythic Ring One use. Summons a white draft horse for the attuned creature.
+  - Nebula Globe A 'snowglobe' filled with projections of stars and constellations.
+  - Nectar-Dios One use. A bottle of wine that lets a creature understand Celestial.
+  - Noctis Key An ebony key that can be used to dispel a Light or Daylight spell.
+  - Novis Key An ivory key that can be used to dispel a Darkness spell.
+  - Occult Beads One use. Can be thrown to create a 10 ft radius pool of oil.
+  - Oculus Tres One use. Can be crushed to gain 30 ft Blindsight for 1d4 hours.
+  - Olive's Lantern A branch of berries that glow in the dark.
+  - Opaline Owl An opal figurine of an owl. It turns blue when Celestials are nearby.
+  - Parasitic Glove A glove made from lamprey skin. Add +1 to unarmed damage.
+  - Pennate Circlet While attuned to this circlet, a person has a tattoo of a wing.
+  - Phobos Ember One use. Swallowing this ember cures the Frightened condition.
+  - Psuedo-Mirror Reflects things in different colors than they actually are.
+  - Quiescent A sleeping elemental in a jar. It won't wake for 400 years.
+  - Rarewater One use. Drinking it cures hangovers and drunkness.
+  - Reef Helm A coral helmet. The attuned creature can swim wearing armor.
+  - Roman Rose A yellow rose that flickers with illusory flame in the dark.
+  - Rtanrir Chest A wooden box that crawls behind an attuned creature on many feet.
+  - Sanguine Web A sticky web made into a net. Uses net stats but deals acid damage.
+  - Saint of Forge A metal saint statue that clicks into a mace as an action.
+  - Scorn Scar While attuned to this token, a person has a scar of a monster bite.
+  - Seaborne Cloth While wearing this blue bandana, a person can't become seasick.
+  - Talisman Mort A grey chain that shifts into a simple sickle as an action.
+  - Tikar Beetle Asilver beetle that can turn invisible.
+  - Torn Pages Erratic pages from a torn spellbook. Causes Wild Magic once per day.
+  - Trailspider A full tracker tarantula. Can identify footprints in exchange for foo
+  - Unconsc Pages Ajournal that records the day from its own perspective.
+  - Under-Fern A fern from the underdark. Curls up and turns black in sunlight.
+  - Ursula's Wand Allows an attuned creature to communicate with fish and sealife.
+  - Ursuper A doll that quietly mimics a person of its choice.
+  - Valor's Eyes While attuned to this marble, a person's eyes flicker with fire.
+  - Vandal Brush Once per day, this brush can switch the color of two small objects.
+  - Veins Mud One use. This potion provides all of a creature's nutrition for a wee
+  - Vharen's Coin Fairies, pixies, and other fey are unnerved by this coin.
+  - Wanderdust An attuned creature can't become lost except by magical means. 
+  - Warrior Blood One use. This vial of blood prevents Celestials from entering an area. 
+  - Whelk Horn This horn can be used to communicate with whales. 
+  - Word Jar When you open this jar, it whispers synonyms to words that you say. 
+  - Xalebones A set of xale bones. They start to hiss when a ghost is nearby. 
+  - Xerxes Dagger A bronze dagger that deals lightning damage instead of slashing. 
+  - Xorn Fang A Xorn fang pendulum. Tilts towards the nearest gem deposits. 
+  - Xuril Tablet A parchment tablet that translates written text into Abyssal. 
+  - Yarrow Perfume A flowery perfume that attracts fey to the area. 
+  - Yon Scape A painting that depicts a landscape. It changes every day. 
+  - Yule Plaque A wooden plaque of a yule tree. One use, summons an elk. 
+  - Zaxel's Mark While attuned to this wax seal, a person's skin appears grey. 
+  - #09 Specimen: Ladon dust. Makes small objects magnetic. 
+  - #24 Specimen: Frog heart. Starts beating when placed in water. 
+  - #46 Specimen: Mummified hummingbird. Wilts ordinary plants. 

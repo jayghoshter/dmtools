@@ -1,0 +1,22 @@
+#!/bin/bash
+
+LIST="DnDAppFiles/Compendiums/Full Compendium.xml"
+TAG="$1"
+name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore)
+while [ -n "$name" ]; do
+    data=$(xq -r --arg n "$name" '.compendium.'"$TAG"'[] | select(.name == $n)' "$LIST")
+    echo "$data" | grep -i --color=always -e "^" \
+            -e "[0-9]\+d[0-9]\+" \
+            -e "saving throw" \
+            -e "DC [0-9]*" \
+            -e "[0-9]* minute[s]\?" \
+            -e "[0-9]* hour[s]\?" \
+            -e "[0-9]* day[s]\?" \
+            -e "\(dis\)\?advantage" \
+            -e "damage" \
+            -e "acid\|bludgeoning\|cold\|fire\|force\|lightning\|necrotic\|piercing\|poison\|psychic\|radiant\|slashing\|thunder" \
+            -e "strength\|dexterity\|constitution\|intelligence\|wisdom\|charisma" \
+            -e "blinded\|charmed\|deafened\|exhaustion\|frightened\|grappled\|incapacitated\|invisible\|paralyzed\|petrified\|poisoned\|prone\|restrained\|stunned\|unconscious" \
+            | less
+    name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore)
+done

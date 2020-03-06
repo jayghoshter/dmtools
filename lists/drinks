@@ -1,0 +1,23 @@
+type: list
+pick: 5
+items:
+  - Blood Ale (4 cp) salty and bitter, mild potency
+  - Cinnamon Stout (4 cp) spicy, mild potency
+  - Fish Oil Whisky (10 cp) bitter and oily, strong potency
+  - Goblin Turpentine (4 cp) sour with bitter aftertaste, strong potency
+  - Hair of the Dog (5 cp) fizzy, mild potency
+  - Hammer Head (10 cp) mildly spicy with a bitter aftertaste, very strong potency
+  - Jerikals Private Reserve (10 cp) sweet and mildly spicy, mild potency
+  - Orange Peel Ale (5 cp) citric, moderate potency
+  - Morning Constitutional (4 cp) fruity, mild potency
+  - Pesh Brandy (20 cp) sweet and warm, strong potency
+  - Purple Dragon Spit (10 cp) bitter, strong potency
+  - Rabid Squirrel (8 cp) foamy and bitter, moderate potency
+  - Thileu Lager (15 cp) extremely spicy and often painful, moderate potency
+  - Wolfberry Wine (10 cp) sweet and bitter, moderate potency
+  - Acolyte Ale* (250 sp) potion of cure light wounds, 5 doses
+  - Little Bishop* (9oo sp) potion of remove paralysis, 3 doses
+  - Blue Priest* (1,500 sp) potion of cure moderate wounds, 5 doses
+  - Night Light Stout* (250 sp) potion of remove fear, 5 doses
+  - Red Cardinal Wine* (3,750 sp) potion of cure serious wounds, 5 doses
+  - Shelyns Nectar* (2,250 sp) potion of remove curse, 3 doses

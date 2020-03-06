@@ -1,0 +1,144 @@
+type: list
+pick: 10
+items: 
+  - Bullion, precious metals, filthy lucre. 
+  - Blackmail material over powerful colleagues. 
+  - Horses, or more exotic animals (hippogryphs, gryphons, pegasi, etc.) 
+  - Impressive real estate. 
+  - Paintings, or other exceptional works of fixed art. 
+  - Drugs. 
+  - Adulation of the masses. 
+  - The fear of everyone around them. 
+  - The best music, shared with the world or just for them, and at their own whim. 
+  - The rarest foods, cooked by the best chefs, for the most exquisite and rare experiences. 
+  - Obtain protective magic items, so that they can never be hurt. 
+  - The complete destruction of anyone who opposes them. 
+  - The elimination of a particular family or dynastic house. 
+  - 
+    - Mastery of a particular skill (**1d6**). 
+    - 
+      type: list
+      pick: 1
+      items: 
+        - swordsmanship
+        - military leadership
+        - horsemanship
+        - sailing
+        - painting
+        - music 
+  - Raising their home city/nation up above all others in the world. 
+  - The supremecy of their own religion or ideology. 
+  - The elimination of a particular religion or ideology. 
+  - The elimination or subjugation of a particular nation. 
+  - Eternal life for self. 
+  - Complete control of everyone around them. 
+  - The elimination of threats to their species. 
+  - Ensure collective dominance of their offspring. 
+  - Ensure dominance of their designated heir. 
+  - Discover the secrets of an ancient or alien race. 
+  - Emancipate an oppressed group within society. 
+  - Bring world peace through the sword. 
+  - Bring world peace through financial interdependence. 
+  - Bring world peace through the elimination of poverty. 
+  - Bring world peace through complete mind-control of everyone. 
+  - Bring world peace through continuous inspiration of greatness. 
+  - Eradicate a disease. 
+  - Completely prevent fiends from being able to enter the world. 
+  - Completely prevent the use magic. 
+  - Destroy all undead. 
+  - Bring world peace through economic dominance. 
+  - Establish a colony for their species on another world. 
+  - Prevent anyone from coming to or leaving this world. 
+  - Reset all life on this world, to be created in the patron's idea of what a perfect world would be. 
+  - Eliminate all life not subservient to patron. 
+  - Destroy the world. 
+  - Destroy half of all life in the world. 
+  - Eliminate an idea from the world. 
+  - Destroy all fae creatures in the world. 
+  - Kill all the gods. 
+  - Kill particular gods. 
+  - End death. 
+  - End all laws of man (or elf, or dwarf, etc.) 
+  - Kill all who break the laws of man (or elf, or dwarf, etc.) 
+  - End war by making it impossible for people to move in groups of more than 1d6x10 
+  - Prevent children from being born for any intelligent species. 
+  - Prevent children from being born for a particlar species. 
+  - Prevent a particular species from being able to use magic. 
+  - Eliminate from society those who do not contribute value. 
+  - 
+    - Education the masses on good taste in. 
+    -
+      dice: 1d6
+      results:
+        1. Poetry; 
+        2. Fashionable clothing; 
+        3. Music; 
+        4. Needlepoint; 
+        5. Calligraphy; 
+        6. Floral arrangement 
+  - 
+    - Educate the masses in the proper maintenance of personal health through (1d6). 
+    - 
+      dice: 1d6
+      results: 
+        1: A particular diet (e.g. veganism, keto); 
+        2: A method of meditation; 
+        3: A particular method of bodily hygiene; 
+        4: A particular form of calisthenics or martial arts (e.g. Tai Chi, Tae Bo); 
+        5: A particular beverage (e.g. coffee, naval, or low fat soy lattes); 
+        6: A particular kind of clothing (e.g. a certain kind of undergarment, or a certain kind of headware). 
+  - 
+    - Educate the masses in the proper means of enlightenment and divination through.
+    - 
+      dice: 1d6
+      results: 
+        1: Astrology; 
+        2: Numerology & Arithmancy; 
+        3: Bibliomancy; 
+        4: Cartomancy; 
+        5: Pyromancy; 
+        6: Hydromancy 
+  - Ensuring the most rapid possible increase of the patron's own species. 
+  - Infecting everyone with a particular disease. 
+  - Infecting the chosen with a particular disease. 
+  - Gaining the attention of a particular deity or outsider. 
+  - Merging two species together. 
+  - Merging two cultures together. 
+  - Liberating a subculture or ethnic group from a greater political body. 
+  - Constructing a monument to the patron's own life, in the form of an extravagant mausoleum. 
+  - Experiencing life in every conceivable way (e.g. as a biped/quadruped/invertebrate/etc., all genders, aquatic/avian/amphibious/etc) 
+  - End the lives of all over a certain age. 
+  - Gain the romantic love of a particular creature. 
+  - Outdo someone else, and make sure they realize it. 
+  - Prevent a particular catastrophe from ever happening (again). 
+  - Destroy all those who have committed a particular crime. 
+  - Destroy all those who have committed a particular crime, and not served punishment for it. 
+  - Avoid their own doom or fate. 
+  - Change a law. 
+  - Ensure the obedience and proper behavior of those below a certain age. 
+  - Ensure the obedience and proper behavior of those below a certain station. 
+  - Gain the filllial love of a particular creature. 
+  - Gain the parental approval of a particular creature. 
+  - To fit into a particular group. 
+  - To achieve enlightenment. 
+  - To achieve physical perfection. 
+  - To fulfill the patron's destiny. 
+  - To fulfill the patron's species' destiny. 
+  - To recover an empire. 
+  - To bring about the battle of the gods. 
+  - To never feel powerless again. 
+  - The protection and empowerment of the patron's own family, at any cost. 
+  - Secretly playing threats off against each other, just because the patron can. 
+  - Demonstrating the patron's own superior intelligence. 
+  - Becoming able to cure any disease, wound, curse, or other affliction. 
+  - Subjugating the most powerful entities, because anything else is too boring. 
+  - Desperate to overcome a threat against them. 
+  - Desperate to find their loved ones, or their remains. 
+  - Pushing society past stuffy conservatism to embrace beliefs previously rejected. 
+  - Stopping society from discarding trusted traditional values to embrace twisted beliefs. 
+  - Travelling to somewhere no other member of the patron's species has ever been. 
+  - Find a way to commit violence as desired without reprecussion. 
+  - Expel all those who would harm others. 
+  - Cause the patron's society to surpass all other societies in this world. 
+  - To harness the power of gods for the use of mortals. 
+  - To prevent any mortals from ever again being subjugated by others. 

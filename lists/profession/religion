@@ -1,0 +1,28 @@
+type: list
+pick: 1
+items:
+  - Abbot/Abbess
+  - Acolyte
+  - Almoner
+  - Archbishop
+  - Bishop
+  - Cardinal
+  - Chaplain
+  - Clergy
+  - Cleric
+  - Cultist
+  - Cult Leader
+  - Diviner
+  - Exorcist
+  - Friar
+  - High Priest/Pope
+  - Inquisitor
+  - Missionary
+  - Monk
+  - Nun
+  - Paladin
+  - Pardoner
+  - Priest
+  - Prophet
+  - Sexton
+  - Templar

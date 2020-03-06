@@ -1,0 +1,12 @@
+type: list
+pick: 1
+items: 
+  - Bar
+  - Tavern
+  - Pub
+  - Club
+  - Inn
+  - Lounge
+  - Den
+  - Lodge
+  - Shack

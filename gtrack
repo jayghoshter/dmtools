@@ -1,0 +1,97 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# track money in dnd 
+# usage: gtrack +10sp-100gp "reason"
+# Doesn't track electrum.
+# Conversion rates are 10x for everything. Gold Standard.
+# SILVER STANDARD NOT IMPLEMENTED (Only affects rebalancing). 
+
+
+bank="/home/jayghoshter/Dropbox/dnd-bank.txt"
+balance=$(tail -1 "$bank")
+
+function transact()
+{
+    mod=${1:0:1}
+    val=$(echo "$1" | tr -dc '0-9')
+    cur=${1: -2}
+
+    [ "$cur" == "pp" ] && pp=$(($pp $mod $val))
+    [ "$cur" == "gp" ] && gp=$(($gp $mod $val))
+    [ "$cur" == "sp" ] && sp=$(($sp $mod $val))
+    [ "$cur" == "cp" ] && cp=$(($cp $mod $val))
+    
+    ## this is because with set -euo pipefail, the last statement
+    ## should never be a [ ] && ...
+    echo "transacted $1"
+}
+
+round()
+{
+    awk -v n=$1 'BEGIN{print int((n+10)/10) * 10}'
+}
+
+function rebalance()
+{
+
+    while [[ $pp -lt 0 ]] || [[ $gp -lt 0 ]] || [[ $sp -lt 0 ]] || [[ $cp -lt 0 ]]; do
+
+        cpmod=$(echo $cp | tr -d '+-')
+        spmod=$(echo $sp | tr -d '+-')
+        gpmod=$(echo $gp | tr -d '+-')
+
+        cpceil=$(round $cpmod)
+        spceil=$(round $spmod)
+        gpceil=$(round $gpmod)
+
+        echo "$gpceil $spceil $cpceil"
+        exit
+
+        [ "$gp" -lt 0 ] && transact '+'"$(( $gpceil ))"'gp' && transact '-'"$(( gpceil / 10 ))"'pp'
+        [ "$sp" -lt 0 ] && transact '+'"$(( $spceil ))"'sp' && transact '-'"$(( spceil / 10 ))"'gp'
+        [ "$cp" -lt 0 ] && transact '+'"$(( $cpceil ))"'cp' && transact '-'"$(( cpceil / 10 ))"'sp'
+
+    done
+
+    echo "---------- Re-Balanced ----------"
+    echo "$pp pp | $gp gp | $sp sp | $cp cp"
+    echo "---------------------------------"
+
+    echo -e "$pp,$gp,$sp,$cp,$(date +%F),$reason,$input" >> "$bank"
+
+}
+
+
+pp=$(echo "$balance" | cut -d ',' -f 1)
+gp=$(echo "$balance" | cut -d ',' -f 2)
+sp=$(echo "$balance" | cut -d ',' -f 3)
+cp=$(echo "$balance" | cut -d ',' -f 4)
+
+echo "---------- Old Balance ----------"
+echo "$pp pp | $gp gp | $sp sp | $cp cp"
+echo "---------------------------------"
+
+input="${1:-"None"}"
+reason="${2:-"None"}"
+
+[ "$input" == "--edit" ] && "$EDITOR" "$bank" && exit
+[ "$input" == "None" ] && echo "no input" && exit
+[ "$input" == "-r" ] && echo "rebalancing" && rebalance && exit
+
+ppt=$(echo "$input" | grep -Po "[+-]\d+pp" || true)
+gpt=$(echo "$input" | grep -Po "[+-]\d+gp" || true)
+spt=$(echo "$input" | grep -Po "[+-]\d+sp" || true)
+cpt=$(echo "$input" | grep -Po "[+-]\d+cp" || true)
+
+[ -n "$ppt" ] && transact "$ppt"
+[ -n "$gpt" ] && transact "$gpt"
+[ -n "$spt" ] && transact "$spt"
+[ -n "$cpt" ] && transact "$cpt"
+
+echo "---------- New Balance ----------"
+echo "$pp pp | $gp gp | $sp sp | $cp cp"
+echo "---------------------------------"
+
+echo -e "$pp,$gp,$sp,$cp,$(date +%F),$reason,$input" >> "$bank"

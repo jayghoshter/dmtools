@@ -1,0 +1,9 @@
+type: list
+pick: 1
+items:
+  - Billboardposter
+  - Courier
+  - Herald
+  - Interpreter
+  - Linguist
+  - Messenger

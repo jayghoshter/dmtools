@@ -1,0 +1,62 @@
+#!/bin/python3
+
+# TODO: random roll
+
+## reads from an encounter file, the names and hps in csv format
+## Uses it to prompt for initiative rolls
+
+from collections import OrderedDict
+# import random
+import sys
+import csv
+
+def pre(inits, hps):
+    num = input('How many characters? ')
+    print()
+    for n in range(int(num)):
+        name=input('Name:')
+        init=int(input('init:'))
+        hp=int(input('hp:'))
+        inits.update({name:init})
+        hps.update({name:hp})
+        print()
+
+def read_inits(inits, hps):
+    for key in hps.keys():
+        init=int(input('init ('+key+'):'))
+        inits.update({key:init})
+
+def read_hps(hps):
+    with open(sys.argv[1], mode='r') as infile:
+        reader = csv.reader(infile)
+        hps.update({rows[0]:int(rows[1]) for rows in reader})
+
+
+inits={}
+hps = {}
+# pre(inits, hps)
+read_hps(hps)
+read_inits(inits, hps)
+
+turn=1
+
+while 1:
+    inits = OrderedDict(sorted(inits.items(), key=lambda kv: kv[1], reverse=True))
+    for key in inits.keys():
+        if key not in hps.keys():
+            continue
+        print("\n=== TURN [" + str(turn) + "]: " + key + " ===")
+        turn = turn + 1
+        who=input('whom to attack: ')
+        while (who != "-"):
+            if(who in hps.keys()):
+                dmg = int(input("dmg: "))
+                hps.update({who:hps[who] - dmg})
+                for key, value in hps.items():
+                    print("\t\t\t\t" + key + ": " + str(value))
+                if hps[who] <= 0:
+                    print(who + " is dead!!")
+                    # del hps[who]
+            who=input('whom to attack: ')
+
+

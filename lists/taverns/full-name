@@ -1,0 +1,39 @@
+dice: 1d8
+results:
+  1: 
+    - { file : taverns/adjectives } 
+    - { file : taverns/noun }
+    - { file : taverns/title }
+  2: 
+    - The 
+    - { file : taverns/adjectives }
+    - { file : taverns/Noun }
+  3: 
+    - The
+    - { file : taverns/adjectives } 
+    - { file : taverns/noun }
+    - { file : taverns/title }
+  4: 
+    - { file : taverns/noun }
+    - and
+    - { file : taverns/noun }
+  5: 
+    - { file : taverns/noun }
+    - and
+    - { file : taverns/noun }
+    - { file : taverns/title }
+  6:
+    - The
+    - { file : taverns/noun }
+    - and
+    - { file : taverns/noun }
+  7:
+    - The
+    - { file : taverns/noun }
+    - and
+    - { file : taverns/noun }
+    - { file : taverns/title }
+  8:
+    - The
+    - { file : taverns/adjectives }
+    - { file : taverns/title }

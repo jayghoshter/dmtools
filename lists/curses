@@ -1,0 +1,103 @@
+type: list
+pick: 1
+items:
+  - Curse of The Conformed- modifiers are not added to any attack roll, saving throw, or ability checks.
+  - Curse of The Raging Mage- intelligence and strength stats are swapped.
+  - Curse of The Far Realms- gain vulnerability to necrotic, radiant, fire, and cold damage.
+  - Curse of The Halfling Crown- Become one size category smaller. Only affects creatures that are medium and above.
+  - Curse of The Weary Messenger- gain an exhaustion point every time you complete a long rest.
+  - Curse of The Illuminated Sphinx- lose all languages and can only speak common.
+  - Curse of The Snow Sorcerer- skin becomes blue and occasionally feel very cold and uncomfortable. If a warforged is affected by this curse they begin to need sleep and food.
+  - Curse of The Storm Kings- gain a vulnerability to lightning damage and be struck with 5d12 lightning damage whenever outside in the rain for longer than a minute.
+  - Curse of The Ancients- have disadvantage on all saving throws against magical spells.
+  - Curse of The Leper- lose any disease immunities and take 2d12 force damage every hour. -2 charisma.
+  - Curse of The Damned- disadvantage on death saving throws and lose 3d6 maximum hit points.
+  - Curse of The Blind- become blind and resistant to radiant damage.
+  - Curse of The Deaf- become deaf and resistant to thunder damage.
+  - Curse of The Hideous- every creature without true sight sees you as a troll. You have disadvantage on all charisma saves and checks.
+  - Curse of The Buried Prince- cannot steal anything. Attempts to steal things are rolled at disadvantage and -15. Failed checks to steal are met with the thief taking 3d12 psychic damage. Thoughts of stealing deal 2d6 psychic damage.
+  - Curse of The Restless High Court- requires 12 hours for a long rest.
+  - Curse of The Broken- disadvantage on constitution saving throws and all broken bones remain broken until the curse is lifted.
+  - Curse of The Joyous- for every 48 hours the cursed doesn’t have fun they lose 50 hit points off of their maximum health.
+  - Curse of The Sickly Chef- all food tastes rotten.
+  - Curse of The Lost Soul- lose all sense of direction.
+  - Curse of The Devil- have constant nightmares about devils and demons. The cursed take 1d10 psychic and 1d10 fire damage when 60 feet near a fiend.
+  - Curse of The Vampire- for every 50 damage the cursed takes they emit a 30 feet radius and any hostile creatures in the aura regain 1d100 hit points.
+  - Curse of The Enlightened Monk- the cursed feel an intense urge to no longer fight. All attack rolls are at disadvantage and barbarians can no longer rage. All damaging spells cast by the cursed have the target roll at advantage.
+  - Curse of The Artist- gain a proficiency in performance but lose all other skill proficiencies.
+  - Curse of The Forgotten- anyone that hasn’t seen the cursed in a week forget they ever existed. Creatures with over 17 intelligence or wisdom do not forget the cursed.
+  - Curse of The Artifice- lose an attunement slot.
+  - Curse of The Bride and Groom- lose the ability to love.
+  - Curse of The Poor Dental Hygienist- dental health deteriorates slowly. Creatures without teeth begin to have inflamed gums.
+  - Curse of The Mind Flayer- disadvantage on all checks against being charmed by aberrations. Gain vulnerability to psychic damage.
+  - Curse of The Unimaginable Horror and Painful Death Soon To Follow- the cursed feel odd for a minute and then feel normal again. After a minute the curse does nothing. Mages use this curse as an extremely effective scare tactic.
+  - Curse of Memories - gain advantage on Intelligence checks, and gain vulnerability to psychic damage.
+  - Curse of Vertigo - make Dexterity checks and saves with disadvantage, must make a Dexterity saving throw if attempting to move more than 20 feet or fall prone.
+  - Curse of The Adventurer- the cursed feels an intense urge to become an adventurer no matter how prepared they are to be one.
+  - Curse of The Vengeful- has the sudden urge to fight at all times. Any non combat rolls are done at disadvantage.
+  - Curse of The Bloody Eye- has to make a constitution saving throw to fall asleep. Has advantage on magical sleep affects.
+  - Curse of The Demon Hand- When in a building that has a level below your current location (such as a basement) You must make a strength saving throw or a demonic hand pulls you down to the lower level.
+  - Curse of The Sewer King- rats, insects, and other pests deal twice as much damage towards the cursed and can detect where they are in a 120 foot radius.
+  - Curse of the Hungry- Cursed always feels extremely hungry unless they are continually eating.
+  - Curse of The Grass Blade- wherever the cursed goes a 10 foot radius of thick grass appears under their feet. The grass reduces walking speed by half and reduces speed in combat by 5. The grass is flamable and does 2d6 fire damage every turn when set ablaze.
+  - Curse of Curiosity- the cursed must make a Wisdom save in order to leave a room/building/structure before they've opened every door, drawer, and container to look inside.
+  - Curse of The Celestial Bull- the cursed emits a 60 foot aura. Any inanimate objects in that aura lose half their hit points. Some objects will break immediately while once held by the cursed.
+  - Curse of The Inhuman- organ systems are changed into a complex mess foreign to medical eyes. All medicine checks on the cursed are at disadvantage and -5.
+  - Curse of Chains- The cursed and an object or creature of the curser’s choice are magically linked by a phantom chain visible only on the ethereal plane. If either the victim of the curse travels further than 60 feet from the other holder of their chain they receive 3d10 irresistible psychic damage at the beginning of every turn until they return to their area of safety.
+  - Curse of The Drone- The Subject of this curse cannot see any dice rolls, and their dice rolls are done by the DM. These rolls can’t be fudged, but also can’t be seen.
+  - Curse of The Beggar- all silver and gold the cursed touch is tarnished.
+  - Curse of The Blink Dog- once a day at inopportune times the cursed teleport 30 feet in a random direction without their clothes or what they were holding at the time. The clothes and held items are at the point before they were teleported.
+  - Curse of The Necromancer- when killed the cursed become a dire ghoul with 4 intelligence loyal to the one who cursed them.
+  - Curse of The Servant- must roll a DC 19 wisdom save in order to say no.
+  - Curse of The Librarian- must read any book they see.
+  - Curse of The Numb- can no longer feel anything. Multiple sneak attacks can hit the creature without their knowledge of the presence of their attacker.
+  - Curse of The Archer- lose -2 to hit on all ranged attacks and take an extra 1d10 damage from ranged attacks.
+  - Curse of The Failed Author- the cursd have poor speling.
+  - Curse of The Baroness- lose a bonus action at the start of every turn.
+  - Curse of The Ancient Red Dragon- gain vulnerability to fire damage and automatically fail all dexterity saving throws.
+  - Curse of The Mastiff King- slowly become a mastiff over the span of a month.
+  - Curse of The Great Old One- the cursed are surrounded by massive shadowy tentacles in a 10 foot radius. Any creature 20 feet away from the cursed is hit with a tentacle with an attack roll modifier equal to the cursed ones charisma and twice their proficiency bonus dealing 1d12 necrotic and 2d6 magical bludgeoning damage. Any creature within 10 feet of the cursed are struck three times by the tentacles and creatures within 5 feet are struck five times. The tentacles are indiscriminatory and attack any creature friendly or hostile.
+  - Curse of The Unending Silence- cannot speak.
+  - Curse of Repellent- a kind of object (apples, leather boots, a specific shade of green) causes to cursed to vomit when they see it.
+  - Curse of The Theologian- must pray to a god for an hour a day minimum or lose 50 maximum hit points. Some have found that the cursed can naturally be cured through a gods blessing.
+  - Curse of The Mutant- have the affects of aquatic adaptation and natural weapons from Alter Self on the cursed at all times. -3 charisma.
+  - Curse of The Impurity- all resistances become vulnerabilities and all immunities become resistances.
+  - Curse of The Famine Spirit- disadvantage on all initiative rolls and requires twice the amount of food.
+  - Curse of The Shadowfell- vulnerability to necrotic damage and teleport to the Shadowfell for 6 seconds every time the cursed takes necrotic damage.
+  - Curse of The Trapped- the cursed cannot go to other dimensions. Any attempt to go to another dimension will teleport the cursed to a random point in the dimension they reside in.
+  - Curse of The Dead Scholar- The cursed cannot cast spells from a random school of magic. The school of magic is decided by rolling 1d8.
+  - Curse of The Lich- the cursed become an undead and cannot be resurrected when killed.
+  - Curse of The Thunderous Roar- the cursed when asleep snore. The snoring can be heard from 200 feet away.
+  - Curse of The Greased- become coated in a thick layer of grease. Gain vulnerability to fire and immunity to being grappled. Acrobatics checks are at disadvantage and all attack rolls are at disadvantage while in rough terrain.
+  - Curse of Deprivation- cannot carry anything with a value over 150 times the level of the cursed.
+  - Curse of The Nature Goddess- using any metal object deals 2d10 fire damage and 2d10 force damage every minute.
+  - Curse of The Puppeteer- lose control over one arm and have the arm do what it wants.
+  - Curse of The Champions Deck- -10 to all gaming set rolls.
+  - Curse of The Three Dark Lords- for every saving throw and attack roll add 1d4-3 to the roll.
+  - Curse of The Statue- when the cursed enacts revenge for selfish reasons they are petrified for 10 minutes. For every time the cursed becomes a statue they add another 10 minutes to the length of their petrification.
+  - Curse of The Vibrant Sun- skin turns bright orange. Disadvantage on stealth checks in daylight.
+  - Curse of The Owlbear- gain +2 strength but -4 intelligence and -4 charisma.
+  - Curse of The Dungeon Delver- disadvantage on perception and investigation checks. Disadvantage against saving throws made to avoid traps. Gain vulnerability to trap damage. Searching for traps is done at only one fourth of the speed.
+  - Curse of The Bloody Hand- every creature the cursed has killed is seen around them as spirits. Only the cursed can see or hear the spirits of the ones they have killed. The spirits harbor an intense anger for their killer.
+  - Curse of The Fragile Wizard- all hit die are expended after a long rest.
+  - Curse of The Arcane Feather- gain vulnerability to fall damage and vulnerability to all damage while airborne.
+  - Curse of The Blade Warlock- lose proficiency to all slashing weapons and gain a vulnerability to magical and nonmagical slashing damage.
+  - Curse of Improved Bane- subtract 1d8 from all saving throws and attack rolls.
+  - Curse of The Hanged Man- the cursed feels their throat close up in a very uncomfortable way. the cursed can only hold their breath for half as long.
+  - Curse of The False Savior- lose proficiencies in all saving throws.
+  - Curse of The Red Siren- critical fails happen when rolling a 1 or a 2.
+  - Curse of The Creeping Darkness- when not around a light source, shadowy figures begin clawing the cursed dealing 3d10 of a random damage type bludgeoning, piercing, slashing, necrotic, psychic, or force for every 6 seconds outside of light.
+  - Curse of The Unhinged- advantage on strength checks and saving throws but disadvantage on wisdom, intelligence, and charisma checks and saving throws. +1 to all attack rolls and -2 to AC.
+  - Curse of The Full Moon- every night the cursed becomes mad and gains an indefinite madness character flaw.
+  - Curse of The Everlasting Eclipse- at day the cursed is vulnerable to radiant damage and has disadvantage on every damage die rolled. At night the cursed is vulnerable to necrotic damage and takes extra damage equal to the attacks damage modifier plus the amount of damage die rolled.
+  - Curse of The Broken Mirror- all mirrors break when the cursed look into them.
+  - Curse of The Priests Shield- gain resistance to all damage types and immunity to radiant and necrotic as well as gaining +2 AC. All damage dealt by the cursed is subtracted by -40.
+  - Curse of The Charlatan- -15 to persuasion and deception checks. Additionally the curse lose a proficiency in one tool, if one of the tool proficiencies they have is a disguise kit then they lose their proficiency in the disguise kit and another tool.
+  - Curse of The White Crow- cannot have advantage on any rolls.
+  - Curse of The Blight Giant- gain vulnerability to poison damage, and -3 on constitution saving throws. Every failed constitution throw deals 4d4 - the charisma modifier of the cursed in necrotic damage.
+  - Curse of Orcish Fury- moving away from hostile creatures costs 2 feet of movement for every 1 foot traveled.
+  - Curse of The Drunk Ogre- The blood of the cursed becomes alcoholic and they are always drunk. Disadvantage on intelligence and wisdom checks.
+  - Curse of The Unloved- charisma is reduced to 1 and all charisma saving throws are at disadvantage.
+  - Curse of The Tyrants Rapier- whenever the cursed makes a check that they are not proficient in they take 1d8 piercing and 1d8 psychic damage. All skills that the cursed are not proficient in have -3 added to the modifier.
+  - Curse of The Dwarven Lion- lose all hair in a week and never grow it back
+  - The Forbidden Curse- a spell lost to time. Requires 200 gp worth of diamond dust. The next time the cursed roll a natural one they are reduced to 0 hit points.

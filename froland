@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -euo pipefail
+
+cd lists
+
+out=$(fzf --expect=ctrl-o --bind esc:ignore) 
+
+while [ -n "$out" ]; do
+
+    key=$(echo "$out" | cut -d $'\n' -f 1)
+    line=$(echo "$out" | cut -d $'\n' -f 2)
+
+    [ "$key" == "ctrl-o" ] && $EDITOR "$line" || roland "$line" | less
+    out=$(fzf --expect=ctrl-o -q "$line" --bind esc:ignore)
+done

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+## fuzzy search and edit text file lines. 
+## I use it as a character sheet
+
+set -euo pipefail
+
+FILE="/home/jayghoshter/Dropbox/Notes/DND/campaigns/Faerun/gala.txt"
+
+while true; do
+    OUT=$(cat "$FILE" | fzf -e --expect=ctrl-e --bind esc:ignore)
+
+    key=$(echo "$OUT" | cut -d $'\n' -f 1)
+    line=$(echo "$OUT" | cut -d $'\n' -f 2)
+
+    if [ "$key" == "ctrl-e" ]; then 
+        read -p "Edit:" -e -i "$line" eline
+        sed -i "s/$line/$eline/" "$FILE"
+        continue
+    fi
+
+    [ -n "$OUT" ] && echo "$OUT" | fold -w 75 -s | less
+done
