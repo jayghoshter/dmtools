@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# i3-msg 'workspace 10; append_layout /home/jayghoshter/tree-dnd-fzf.json'
+
+scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+file="$scriptDir/tree-dnd-fzf-tabbed.json"
+
+i3-msg "workspace $1: fzf; append_layout $file"
+
+nohup termite -e "$HOME/local/bin/fdnd monster" > /dev/null 2>&1 & disown
+nohup termite -e "$HOME/local/bin/fdnd spell" > /dev/null 2>&1 & disown
+nohup termite -e "$HOME/local/bin/fdnd item" > /dev/null 2>&1 & disown
+nohup termite -e "$HOME/local/bin/fdnd class" > /dev/null 2>&1 & disown
+nohup termite -e "$HOME/local/bin/fdnd race" > /dev/null 2>&1 & disown
+nohup termite -e "$HOME/local/bin/fdnd background" > /dev/null 2>&1 & disown
+nohup termite -e "$HOME/local/bin/fdnd feat" > /dev/null 2>&1 & disown
+
+i3-msg "workspace $2: books"
+
+nohup zathura "~/Dropbox/DND/5e/handbook.pdf" > /dev/null 2>&1 & disown
+nohup zathura "~/Dropbox/DND/5e/monman.pdf" > /dev/null 2>&1 & disown
+nohup zathura "~/Dropbox/DND/5e/dmguide.pdf" > /dev/null 2>&1 & disown
+nohup zathura "~/Dropbox/DND/5e/xanathar.pdf" > /dev/null 2>&1 & disown
+
+i3-msg 'layout tabbed'

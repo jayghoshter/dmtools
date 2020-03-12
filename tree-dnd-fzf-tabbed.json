@@ -1,0 +1,157 @@
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "percent": null,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+                "height": 722,
+                "width": 1138,
+                "x": 0,
+                "y": 0
+            },
+            "name": "monster",
+            "percent": 0.142857142857143,
+            "swallows": [
+                {
+                    "class": "Termite",
+                    "instance": "termite",
+                    "title": "monster"
+                }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+                "height": 722,
+                "width": 1138,
+                "x": 0,
+                "y": 0
+            },
+            "name": "spell",
+            "percent": 0.142857142857143,
+            "swallows": [
+                {
+                    "class": "Termite",
+                    "instance": "termite",
+                    "title": "spell"
+                }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+                "height": 722,
+                "width": 1138,
+                "x": 0,
+                "y": 0
+            },
+            "name": "item",
+            "percent": 0.142857142857143,
+            "swallows": [
+                {
+                    "class": "Termite",
+                    "instance": "termite",
+                    "title": "item"
+                }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+                "height": 722,
+                "width": 1138,
+                "x": 0,
+                "y": 0
+            },
+            "name": "race",
+            "percent": 0.142857142857143,
+            "swallows": [
+                {
+                    "class": "Termite",
+                    "instance": "termite",
+                    "title": "race"
+                }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+                "height": 722,
+                "width": 1138,
+                "x": 0,
+                "y": 0
+            },
+            "name": "class",
+            "percent": 0.142857142857143,
+            "swallows": [
+                {
+                    "class": "Termite",
+                    "instance": "termite",
+                    "title": "class"
+                }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+                "height": 722,
+                "width": 1138,
+                "x": 0,
+                "y": 0
+            },
+            "name": "feat",
+            "percent": 0.142857142857143,
+            "swallows": [
+                {
+                    "class": "Termite",
+                    "instance": "termite",
+                    "title": "feat"
+                }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+                "height": 722,
+                "width": 1138,
+                "x": 0,
+                "y": 0
+            },
+            "name": "background",
+            "percent": 0.142857142857143,
+            "swallows": [
+                {
+                    "class": "Termite",
+                    "instance": "termite",
+                    "title": "background"
+                }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

@@ -1,6 +1,9 @@
 #!/bin/bash
 
-LIST="DnDAppFiles/Compendiums/Full Compendium.xml"
+scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+file="DnDAppFiles/Compendiums/Full Compendium.xml"
+LIST="$scriptDir/$file"
+
 TAG="$1"
 name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore)
 while [ -n "$name" ]; do

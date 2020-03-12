@@ -46,8 +46,8 @@ function rebalance()
         spceil=$(round $spmod)
         gpceil=$(round $gpmod)
 
-        echo "$gpceil $spceil $cpceil"
-        exit
+        # echo "$gpceil $spceil $cpceil"
+        # exit
 
         [ "$gp" -lt 0 ] && transact '+'"$(( $gpceil ))"'gp' && transact '-'"$(( gpceil / 10 ))"'pp'
         [ "$sp" -lt 0 ] && transact '+'"$(( $spceil ))"'sp' && transact '-'"$(( spceil / 10 ))"'gp'

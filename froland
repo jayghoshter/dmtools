@@ -2,7 +2,10 @@
 
 set -euo pipefail
 
-cd lists
+
+scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+file="DnDAppFiles/Compendiums/Full Compendium.xml"
+cd "$scriptDir/lists"
 
 out=$(fzf --expect=ctrl-o --bind esc:ignore) 
 
