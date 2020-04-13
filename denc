@@ -23,7 +23,7 @@ def roll(string):
     if 'd' in string:
         if '+' in string:
             add = int(string.split('+')[1])
-            string = dmgstring.split('+')[0]
+            string = string.split('+')[0]
         else:
             add=0
         n = int(string.split('d')[0])
@@ -46,8 +46,8 @@ def pre(inits, hps):
 
 def read_inits(inits, hps):
     for key in hps.keys():
-        init=int(input('init ('+key+'):'))
-        inits.update({key:init})
+        initstr=input('init ('+key+'):')
+        inits.update({key:roll(initstr)})
 
 def read_hps(hps):
     with open(sys.argv[1], mode='r') as infile:
@@ -83,7 +83,7 @@ while 1:
         # while (who != "-"):
         while (who != None ):
             if(who in hps.keys()):
-                print(info[attacker])
+                print(info[attacker].replace('\\n', '\n').replace('\\t', '\t'))
                 dmgstring = input("dmg: ")
                 dmg = roll(dmgstring)
                 print("Doing " , dmg , " damage to " , who)
