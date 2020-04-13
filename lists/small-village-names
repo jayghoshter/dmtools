@@ -1,4 +1,5 @@
 dice: 1d300
+times: 10
 results:
   1:  Copstage
   2:  Innswood

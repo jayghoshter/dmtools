@@ -13,4 +13,4 @@ LIST="$scriptDir/$file"
 
 out=$(xq -r '.compendium.'"$1"'[] | select ('"$2"') | [.name, '"$3"'] | @tsv' "$LIST")
 
-echo -e "$out" | column -t -s $'\t'
+echo -e "$out" | column -t -o $'\t' -s $'\t'
