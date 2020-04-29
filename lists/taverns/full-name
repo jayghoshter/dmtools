@@ -7,7 +7,7 @@ results:
   2: 
     - The 
     - { file : taverns/adjectives }
-    - { file : taverns/Noun }
+    - { file : taverns/noun }
   3: 
     - The
     - { file : taverns/adjectives } 
