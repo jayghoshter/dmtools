@@ -1,71 +1,112 @@
 #!/bin/python3
 
 # DONE: random roll
-# TODO: input: multiple files with all stats?, fzf-preview with stats while encounter progresses.
-# TODO: if init=0, not playing
-# TODO: the prob with fzf-selection is that it's fullscreen. maybe use preview to show updates?
-# TODO: Cache file
-# TODO: allow rolls in input file
-# TODO: fzf-select, exit
+# DONE: input INITS in file instead of manual
+# DONE: sort HP output by init order
+# DONE: allow rolls in input file
+# DONE: if init=0, not playing
+# DONE: Manage attack rolls
+# TODO: save/resume state
+# TODO: allow subtraction in rolls
+# DONE: allow mixed rolls: recursion (3d10+2d4+1) or (9+2)
 
-## reads from an encounter file, the names and hps in csv format
-## Uses it to prompt for initiative rolls
+# TODO: python GUI encounter builder with sliders
+# input player levels and numbers, look up XP
+# input monster CR and numbers, look up multiplier and XP,
+# Compare and output difficulty
 
-from collections import OrderedDict
-# import random
+## reads from an encounter file,
+## format (CSV): <name>, <number of units>, <hps>, <inits>
+## supports dice input for <number of units>, <hps> and <inits>
+## Additionally, can read stats from file with filename == <name>
+## Best to exec from same folder if stats included, no path handling provided.
+
+
 import sys
 import csv
-import json
 from random import randint
-from iterfzf import iterfzf
+from collections import OrderedDict
+
 
 def roll(string):
-    if 'd' in string:
-        if '+' in string:
-            add = int(string.split('+')[1])
-            string = string.split('+')[0]
-        else:
-            add=0
-        n = int(string.split('d')[0])
-        s = int(string.split('d')[1])
-        rolls = [ randint(1,s) ] * n
-        return (sum(rolls) + add)
+    if '+' in string:
+        rollsum = 0
+        splitstring = string.split('+')
+        for item in splitstring:
+            rollsum = rollsum + roll(item.strip())
+        return rollsum
     else:
-        return int(string)
+        if 'd' in string:
+            try:
+                n = int(string.split('d')[0])
+            except:
+                n = 1
+            s = int(string.split('d')[1])
+            rolls = [ randint(1,s) for i in range(n)]
+            return (sum(rolls))
+        else:
+            try:
+                return int(string)
+            except:
+                return 0
 
-def pre(inits, hps):
-    num = input('How many characters? ')
-    print()
-    for n in range(int(num)):
-        name=input('Name:')
-        init=int(input('init:'))
-        hp=int(input('hp:'))
-        inits.update({name:init})
-        hps.update({name:hp})
-        print()
 
-def read_inits(inits, hps):
-    for key in hps.keys():
-        initstr=input('init ('+key+'):')
-        inits.update({key:roll(initstr)})
-
-def read_hps(hps):
+def read_hps():
     with open(sys.argv[1], mode='r') as infile:
         reader = csv.reader(infile)
         for rows in reader:
-            hps.update({rows[0]:int(rows[1])})
-            info.update({rows[0]:rows[2]})
+            num = nums[rows[0].strip()]
+            for i in range(num):
+                suffix = str(i+1)
+                if num == 1:
+                    suffix = ''
+                hps.update({rows[0].strip() + suffix : roll(rows[2].strip())})
+                inits.update({rows[0].strip() + suffix : roll(rows[3].strip())})
+                info.update({rows[0].strip() + suffix : read_info(rows[0].strip())})
+
+def read_info(filename):
+    if filename == '':
+        return ''
+    try:
+        infile = open(filename, "r")
+        out = infile.read()
+        infile.close()
+        return out
+    except:
+        return ''
+
+
+def read_nums():
+    with open(sys.argv[1], mode='r') as infile:
+        reader = csv.reader(infile)
+        for rows in reader:
+            if rows[1].strip() != '':
+                num=rows[1].strip()
+            else:
+                num = '1'
+            name = rows[0].strip()
+            value = roll(num)
+            print("Spawned ", value, name+"s")
+            nums.update({name : value})
 
 inits={}
 hps = {}
+nums={}
 info={}
-# pre(inits, hps)
-read_hps(hps)
-read_inits(inits, hps)
+read_nums()
+read_hps()
+
+## Remove 0-valued inits
+inits = {x:y for x,y in inits.items() if y!=0}
+hps = {x:y for x,y in hps.items() if x in inits.keys()}
+# hps  = {x:y for x,y in hps.items() if y!=0}
+# info = {x:y for x,y in info.items() if y!=0}
 
 iround=0
 while 1:
     inits = OrderedDict(sorted(inits.items(), key=lambda kv: kv[1], reverse=True))
+    for key in inits:
+        print("\t\t\t\t" + key + ": " + str(hps[key]))
     iround= iround+1
     turn=0
     for attacker in inits.keys():
@@ -73,28 +114,21 @@ while 1:
             continue
         turn = turn + 1
         print("\n=== ROUND [" + str(iround) + "] TURN [" + str(turn) + "]: " + attacker + " ===")
-        # who=input('whom to attack: ')
-        # who = iterfzf(hps, prompt="\n=== TURN [" + str(turn) + "]: " + attacker + " ===")
-        out = iterfzf(hps, prompt=("\n=== ROUND [" + str(iround) + "] TURN [" + str(turn) + "]: " + attacker + " ==="), print_query=True)
-        if out[1] is None and out[0] == 'quit':
-            sys.exit()
-        who=out[1]
+
+        iattack=1
+        who=input('whom to attack ['+ str(iattack) + ']: ')
         print("Attacking ", who)
-        # while (who != "-"):
-        while (who != None ):
+        while (who != ""):
             if(who in hps.keys()):
-                print(info[attacker].replace('\\n', '\n').replace('\\t', '\t'))
-                dmgstring = input("dmg: ")
-                dmg = roll(dmgstring)
+                print(info[attacker])
+                print("You rolled", roll(input("roll for ATK: ")))
+                dmg = roll(input("roll for DMG: "))
                 print("Doing " , dmg , " damage to " , who)
                 hps.update({who:hps[who] - dmg})
-                for key, value in hps.items():
-                    print("\t\t\t\t" + key + ": " + str(value))
+                for key in inits:
+                    print("\t\t\t\t" + key + ": " + str(hps[key]))
                 if hps[who] <= 0:
                     print(who + " is dead!!")
-                    # del hps[who]
-            # who=input('whom to attack: ')
-            out = iterfzf(hps, prompt=("\n=== ROUND [" + str(iround) + "] TURN [" + str(turn) + "]: " + attacker + " ==="), print_query=True)
-            # if out[1] is None and out[0] == 'quit':
-            #     break
-            who=out[1]
+                    # del hps[who]      # Remove creature after 0 HP,
+                iattack = iattack + 1
+            who=input('whom to attack ['+ str(iattack) + ']: ')
