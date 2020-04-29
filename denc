@@ -8,9 +8,12 @@
 # DONE: Manage attack rolls
 # TODO: save/resume state
 # TODO: allow subtraction in rolls
+# TODO: easier input of descriptive names: fzf/autocomplete/indexing etc
 # DONE: allow mixed rolls: recursion (3d10+2d4+1) or (9+2)
+# DONE: allow comments in encounter files?
+# TODO: input CR/EXP and calculate encounter difficulty at runtime
+# TODO: add colors
 
-# TODO: python GUI encounter builder with sliders
 # input player levels and numbers, look up XP
 # input monster CR and numbers, look up multiplier and XP,
 # Compare and output difficulty
@@ -55,14 +58,25 @@ def read_hps():
     with open(sys.argv[1], mode='r') as infile:
         reader = csv.reader(infile)
         for rows in reader:
-            num = nums[rows[0].strip()]
-            for i in range(num):
-                suffix = str(i+1)
-                if num == 1:
-                    suffix = ''
-                hps.update({rows[0].strip() + suffix : roll(rows[2].strip())})
-                inits.update({rows[0].strip() + suffix : roll(rows[3].strip())})
-                info.update({rows[0].strip() + suffix : read_info(rows[0].strip())})
+            basename = rows[0].strip()
+            if basename[0] != "#":
+                num = nums[rows[0].strip()]
+                for i in range(num):
+                    suffix = str(i+1)
+                    if num == 1:
+                        suffix = ''
+                    try:
+                        name = rows[0].strip() + suffix
+                        if name[0] != "#":
+                            hp = roll(rows[2].strip())
+                            init = roll(rows[3].strip())
+                            inf = read_info(rows[0].strip())
+                            hps.update({name : hp})
+                            inits.update({name :  init})
+                            info.update({name: inf})
+                    except:
+                        print("Error reading encounter (csv) file")
+                        sys.exit()
 
 def read_info(filename):
     if filename == '':
@@ -80,14 +94,17 @@ def read_nums():
     with open(sys.argv[1], mode='r') as infile:
         reader = csv.reader(infile)
         for rows in reader:
-            if rows[1].strip() != '':
-                num=rows[1].strip()
-            else:
-                num = '1'
             name = rows[0].strip()
-            value = roll(num)
-            print("Spawned ", value, name+"s")
-            nums.update({name : value})
+            initval = rows[3].strip()
+            if name[0] != "#":
+                if rows[1].strip() != '':
+                    num=rows[1].strip()
+                else:
+                    num = '1'
+                value = roll(num)
+                nums.update({name : value})
+                if roll(initval) != 0:
+                    print("Spawning ", value, name+"s")
 
 inits={}
 hps = {}
