@@ -1,0 +1,15 @@
+-
+  type: list
+  pick: 1
+  items:
+    - { file: andalus-male-names }
+    - { file: andalus-female-names }
+- { file: npc/npc-physical-attributes}
+- { file: npc/npc-voices}
+- { file: npc/npc-professions}
+- { file: npc/npc-personality-traits}
+- { file: npc/npc-fears}
+- { file: npc/fun-character-flaws}
+- { file: npc/npc-quirks}
+- { file: npc/character-mannerisms-and-quirks}
+

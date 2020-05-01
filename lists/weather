@@ -1,0 +1,30 @@
+- 
+  dice: 1d20
+  results:
+    1-14: Normal temperature for the season
+    15-17: 
+      - 
+        roll: 1d4
+        results:
+        1: 1 to 2 degrees colder
+        2: 3 to 4 degrees colder
+        3: 5 to 6 degrees colder
+    18-20: 
+      - 
+        roll: 1d4
+        results:
+        1: 1 to 2 degrees hotter
+        2: 3 to 4 degrees hotter
+        3: 5 to 6 degrees hotter
+- 
+  dice: 1d20
+  results: 
+    1-12: No Wind
+    13-17: Light Wind
+    18-20: Strong Wind
+-
+  dice: 1d20
+  results:
+    1-12: No Precipitation
+    13-17: Light Rain or Snowfall
+    18-20: Heavy Rain or Snowfall
