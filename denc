@@ -1,29 +1,43 @@
 #!/bin/python3
 
-# DONE: random roll
-# DONE: input INITS in file instead of manual
-# DONE: sort HP output by init order
+# DONE: Allow rolls in prob
+# DONE: Enable checks for prob bounds
+# DONE: Manage attack rolls
+# DONE: Percentage chance of appearing
+# DONE: allow comments in encounter files?
+# DONE: allow mixed rolls: recursion (3d10+2d4+1) or (9+2)
 # DONE: allow rolls in input file
 # DONE: if init=0, not playing
-# DONE: Manage attack rolls
-# TODO: save/resume state
+# DONE: input INITS in file instead of manual
+# DONE: random roll
+# DONE: sort HP output by init order
+# DONE: Allow adding creatures after start of combat (Summons)
+# TODO: add colors
 # TODO: allow subtraction in rolls
 # TODO: easier input of descriptive names: fzf/autocomplete/indexing etc
-# DONE: allow mixed rolls: recursion (3d10+2d4+1) or (9+2)
-# DONE: allow comments in encounter files?
 # TODO: input CR/EXP and calculate encounter difficulty at runtime
-# TODO: add colors
+# TODO: save/resume state
+# TODO: show info on a floating graphical window instead, so it doesn't pollute terminal
+# TODO: Roland type probability? (Nested behaviour? dependencies?)
 
 # input player levels and numbers, look up XP
 # input monster CR and numbers, look up multiplier and XP,
 # Compare and output difficulty
 
 ## reads from an encounter file,
-## format (CSV): <name>, <number of units>, <hps>, <inits>
+## format (CSV): <name>, <number of units>, <hps>, <inits> <OPTIONAL probability (<=100)>
 ## supports dice input for <number of units>, <hps> and <inits>
 ## Additionally, can read stats from file with filename == <name>
 ## Best to exec from same folder if stats included, no path handling provided.
 
+HEADER = '\033[95m'
+OKBLUE = '\033[94m'
+OKGREEN = '\033[92m'
+WARNING = '\033[93m'
+FAIL = '\033[91m'
+ENDC = '\033[0m'
+BOLD = '\033[1m'
+UNDERLINE = '\033[4m'
 
 import sys
 import csv
@@ -60,7 +74,7 @@ def read_hps():
         for rows in reader:
             basename = rows[0].strip()
             if basename[0] != "#":
-                num = nums[rows[0].strip()]
+                num = nums[basename]
                 for i in range(num):
                     suffix = str(i+1)
                     if num == 1:
@@ -72,11 +86,12 @@ def read_hps():
                             init = roll(rows[3].strip())
                             inf = read_info(rows[0].strip())
                             hps.update({name : hp})
-                            inits.update({name :  init})
+                            inits.update({name : init})
                             info.update({name: inf})
                     except:
                         print("Error reading encounter (csv) file")
                         sys.exit()
+
 
 def read_info(filename):
     if filename == '':
@@ -91,6 +106,7 @@ def read_info(filename):
 
 
 def read_nums():
+    prob_threshold = roll("d100")
     with open(sys.argv[1], mode='r') as infile:
         reader = csv.reader(infile)
         for rows in reader:
@@ -101,14 +117,46 @@ def read_nums():
                     num=rows[1].strip()
                 else:
                     num = '1'
-                value = roll(num)
+                try:
+                    prob = roll(rows[4].strip())
+                except:
+                    prob = 100
+                if prob > 100 or prob < 1:
+                    prob = 0
+                if(prob > prob_threshold):
+                    value = roll(num)
+                else:
+                    value = 0
                 nums.update({name : value})
-                if roll(initval) != 0:
-                    print("Spawning ", value, name+"s")
+                if initval != '0':
+                    print("Spawned", nums[name], name+"s")
+
+
+def add_creature(basename):
+    if basename.strip() == '':
+        return
+    print("Adding ", basename)
+    num = roll(input("Number: ").strip())
+    hpstr= input("HP: ").strip()
+    initstr = input("Init: ").strip()
+
+    for i in range(num):
+        suffix = str(i+1)
+        if num == 1:
+            suffix = ''
+        name = basename + suffix
+        hp = roll(hpstr)
+        init = roll(initstr)
+        inf = read_info(basename)
+        hps.update({name : hp})
+        inits.update({name : init})
+        info.update({name: inf})
+
 
 inits={}
 hps = {}
 nums={}
+probs={}
 info={}
 read_nums()
 read_hps()
@@ -116,11 +164,23 @@ read_hps()
 ## Remove 0-valued inits
 inits = {x:y for x,y in inits.items() if y!=0}
 hps = {x:y for x,y in hps.items() if x in inits.keys()}
+probs = {x:y for x,y in probs.items() if x in inits.keys()}
 # hps  = {x:y for x,y in hps.items() if y!=0}
 # info = {x:y for x,y in info.items() if y!=0}
 
+# print("Finished reading encounter file.")
+# for name in nums.keys():
+
+
+
 iround=0
 while 1:
+    if len(inits.keys()) < 1:
+        print("No Encounter!")
+        break
+
+    add_creature(input("Additional Creatures: ").strip())
+
     inits = OrderedDict(sorted(inits.items(), key=lambda kv: kv[1], reverse=True))
     for key in inits:
         print("\t\t\t\t" + key + ": " + str(hps[key]))
@@ -145,7 +205,14 @@ while 1:
                 for key in inits:
                     print("\t\t\t\t" + key + ": " + str(hps[key]))
                 if hps[who] <= 0:
-                    print(who + " is dead!!")
-                    # del hps[who]      # Remove creature after 0 HP,
-                iattack = iattack + 1
-            who=input('whom to attack ['+ str(iattack) + ']: ')
+                    print('{}{}{}{}'.format(FAIL, BOLD, who + " is dead!!", ENDC))
+                        # del hps[who]      # Remove creature after 0 HP,
+                    iattack = iattack + 1
+                who=input('whom to attack ['+ str(iattack) + ']: ')
+    print('\n===========================')
+    print("=== End of Round [" + str(iround) + "] ===")
+    print('===========================')
+
+
+
+
