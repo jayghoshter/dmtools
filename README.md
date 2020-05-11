@@ -9,16 +9,27 @@ Contains data and tools I use in my dnd sessions as both, a DM and player. Do no
 # Requirements
 
 - [fzf](https://github.com/junegunn/fzf)
+- [jq](https://github.com/stedolan/jq)
 - [xq](https://github.com/jeffbr13/xq)
     - xq might also be part of [yq](https://github.com/kislyuk/yq)
-    - [jq](https://github.com/stedolan/jq)
-- roland (submodule)
+- [roland](https://github.com/rjbs/Roland)
     - perl
+- Some python modules for `denc`
+    - tkinter
+    - rich
+    - iterfzf
+
+# Installation
+
+1. Make sure that you have all the requirements satisfied
+2. Run `git clone --recursive https://github.com/jayghoshter/dmtools` 
+3. In DnDAppFiles directory, run `python create_full_compendiums.py`
+4. ???
+5. Profit
 
 # Scripts
 - denc: dnd encounter manager
-    - supply input in csv format: characters,HP
-    - denc asks for initiative values
+    - supply input in csv format: characters,number,hps,inits,probability
     - and starts combat
 - fdfil: apply xq filters on compendiums.
     - for example, list all monsters of .cr == "7" or .size == "G"
@@ -27,6 +38,7 @@ Contains data and tools I use in my dnd sessions as both, a DM and player. Do no
 - fplay: fuzzy searchable character sheet
     - Just uses fzf to find lines in text files
     - ctrl-e edits said lines
+    - ctrl-o opens said file
     - (It's not perfect, sed command in script doesn't escape special characters)
 - froland: fzf + roland
     - generate random things while DMing
