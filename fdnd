@@ -1,11 +1,18 @@
 #!/bin/bash
 
+## DONE: allow query 
+
+## USAGE: fdnd <item|monster|spell|class|race|background|feat> <query (optional)>
+
+set -euo pipefail
+
 scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 file="DnDAppFiles/Compendiums/Full Compendium.xml"
 LIST="$scriptDir/$file"
 
 TAG="$1"
-name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore)
+QUERY="${2:-}"
+name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore -q "$QUERY")
 while [ -n "$name" ]; do
     data=$(xq -r --arg n "$name" '.compendium.'"$TAG"'[] | select(.name == $n)' "$LIST")
     echo "$data" | grep -i --color=always -e "^" \
@@ -21,5 +28,5 @@ while [ -n "$name" ]; do
             -e "strength\|dexterity\|constitution\|intelligence\|wisdom\|charisma" \
             -e "blinded\|charmed\|deafened\|exhaustion\|frightened\|grappled\|incapacitated\|invisible\|paralyzed\|petrified\|poisoned\|prone\|restrained\|stunned\|unconscious" \
             | less
-    name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore)
+    name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore -q "$QUERY")
 done
