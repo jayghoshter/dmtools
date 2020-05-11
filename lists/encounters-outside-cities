@@ -1,0 +1,103 @@
+dice: 1d100
+times: 10
+results: 
+  1: An animal on the road just to be shot by a hunter. Perhaps a horse becomes frightened.
+  2: An old man who knows a lot of stories. He will offer them information, for the right price.
+  3: A party that is loyal to "Insert evil guy". They will try to make sure this is the party who "Evil guy" is looking for.
+  4: A large caravan of a royal or noble man. A large Caravan with a Royal or noble (and family) riding. This Caravan has 12 guards and a mage (Lvl 7) with them.
+  5: An Elven party. They will try to sneak by, or surround them and ask for information.
+  6: A traveller getting robbed. A group of D3(1-2 Thieves/ 3 Animals) will attack helpless people.
+  7: A group of reptilian merchants. They offer a Large city of trade. 6 Guards, 4 merchants.
+  8: A wounded ogre pair. Fluent in Common, Sam and his wife have fled their ogre tribe. They now aid a golden dragon.
+  9: A powerful wizard. A wizard of Lvl (PL + 3), roll a D100 to see how he reacts to the party.
+  10: Bandits attack the party. Most likely during night, but not all of them are wise.
+  11: A rapist. Roll for a random girl. A rapist is a 1st Lvl warrior.
+  12: Bear eating Cake. It will offer them money if they bring fresh bear carcasses. The cake seems magical
+  13: Random scroll with a message. Roll a D100
+  14: Broken cart. A broken down cart! Survivors may still be there, or went for help to the nearest town or worse.
+  15: A Drunken gay merchant. This jolly man has a Metropolis worth of goods. He is guarded by 12 4th Lvl Fighter guards.
+  16: Monster Encounter. Roll on a chart in DM handbook.
+  17: Sabre tooth butterfly. A Spot (DC25) will show that the butterfly has huge teeth. 26HP AC28 +7M (D8+1+D4 Poison)
+  18: Pair of Doppelgangers. They appear to be a normal man and woman, roll D100 for attitude.
+  19: A group of Knights. In armour treading along on their horses, 6th Lvl Fighters #D6+2
+  20: A little girl in a dress with a doll. She will disappear and reappear further away into the woods. Until in the trap of an evil illusionist or mind controlling beasts.
+  21: A Fierce Duel! Roll a D6+2 for the level of the duellist. And roll a D2 who wins.
+  22: A severely sick man. He almost looks like a zombie and is contagious, a fort d20 I required to not fall ill to this disease.
+  23: A talking bird! This bird will tell the party that she was once a human! An evil sorcerer has polymorphed her and she cant return back. She has no idea how the magic works.
+  24: 3 Halfling Bounty Hunters. They Ride their dogs without problem and look toughened by combat.
+  25: A joyful bard. A bard that will sing them a song, tell them a poem, or a nice story about dragons, at least, if the party wants to.
+  26: A dancing light. In the distant will be a small dancing light. But they cant seem to get closer to it, it stays on a set distance. Once near a town, it will disappear and reappear behind them.
+  27: An old fortune-teller. This lady can tell their future, or they could try out her Deck of Many things.
+  28: A large group of mercenarys/ cutthroats. Roll a D100 for their attitude. Party consists of 3D6-1 with the minimum Lvl of 3.
+  29: A green clothed adventurer. Hes looking for a Master Sword. No idea, never heard of.
+  30: An High Elf Archmage. Teclis spell has gone awry. Instead of incinerating a whole battalion of spearmen, he channelled the magic into teleporting him away. Sadly, he lays unconscious on the ground and is in a very bad physical state. (6 Con, but 26 base Int) If helped, he wont forget them. (His home land is far far away.)
+  31: Old orc. This old chieftain orc has lost his will to fight. He rides a Dire Boar and is a Lvl 12 Barbarian, he will just walk right past the group, thinking in himself.
+  32: Belly dancers! A group of traveling entertainers.
+  33: Family Walk. A family casual walks with their dogs. (Cant be further away of a town than 1 day.)
+  34: Dwarven Takedown! A group of dwarfs are fighting a Giant, it looks like they will manage pretty well. They know what theyre doing.
+  35: Man being shadowed. A wealthy looking man walks past, and a moment later they can see another man. Roll to see if they notice him following the other man.
+  36: A normal Farmer. A farmer, heading back to his farm.
+  37: A traveling jeweller. He has business in the next city.
+  38: A hangman. Roll a D2, he either killed himself and left a note, or some people didnt like him.
+  39: Trail of blood. A rather large trail of blood leads away from the path. A track check can be made to see how much bodies were involved.
+  40: Crazy bird guy. A man, clearly insane, is trying to fly by jumping out of trees with a bird suit.
+  41: Lone Goblin. A goblin who has lost his squad . He will flee upon seeing the party, most likely.
+  42: A fallen over tree. Thats it, nothing special.
+  43: Lovely Birds. Suddenly all the birds around them start singing in a lovely tone.
+  44: Insane quiet. The party will notice that all the sound of the environment is gone.
+  45: Dead body. A body with a sword still in its head. The sword will drive any wielder insane in 3D4 days. After another 3D4 days, the wielder would want to kill himself. A will save DC26 will learn them the sword is the problem.
+  46: Already camped adventures. Four other people already set up a small camp a little off the road Spot DC 18 to spot. They can join and have a nice evening or keep on traveling.
+  47: Monk and his disciples. A master monk is teaching his disciples the importance of helping others.
+  48: Animal merchant. He has D8 species of pets. From rabbits to dogs and lizards to rats.
+  49: Wounded Warrior. A strong and fierce warrior, wounded from a fight. He has lost his horse and doesnt have the supplies to treat his wounds properly. 8th Lvl Fighter
+  50: Speed Match. Suddenly two young men sprint by them on their horses, to see who the fastest rider is.
+  51: A hostage held a knife point. A man holding a woman hostage with a knife, whilst arguing with a man who has his bow aimed at him.
+  52: Burning air. A sorcerers spell has gone awry, and not there is an eternal ember in the air here.
+  53: Trapped the wrong ones. A pit trap will be set for an evil merchant, but the party got there first.
+  54: Small Hunters. A hand crossbow using Gnome and a knife throwing Halfling female ride on a rather large riding dog. They have a prisoner shackled behind them.
+  55: Large dead animal. A large dead animal lays slain on the ground. A blood trial will lead away from it, perhaps the victor got wounded himself.
+  56: An creature riding a Pegasus. A spot DC25 will show its an elf. Casually flying by.
+  57: Two creatures disappearing when spotted. Two creates, manlike, will be doing something unknown, when they see someone coming, they disappear however.
+  58: Two Dwarven miners. Just walking around with their pickaxes.
+  59: A blind aristocrat. He uses a rod and walks slowly. He seems to be alone.
+  60: A small group of engineers. Theyre transporting a ballista, someone must have ordered it.
+  61: An evil, animal using, cleric. He tags small explosion traps to small animals and send them to traveling groups.
+  62: A genius builder. He will offer services, which are like miracles.
+  63: Warrior of Steel. A warrior who has enhanced his body with potions and magic. Giving him the ability to turn his body to steel D3 times a day, rendering all attacks useless. He will often use this to scare of attackers, thinking hes invincible, giving up their money.
+  64: A drunk, battling his mind. He will punch around nearly unconscious.
+  65: Orc band. An orc war band, crossing the roads. If they spot enemys they will attack. 5D8 Orcs, levels 1-10.
+  66: Magic duel. Two mages, duelling each other, till the first one drops.
+  67: Wounded animal. A large bear, with a bear trap on his paw, seems to ask the party for help.
+  68: Lightning storm. The party can better seek shelter.
+  69: Preaching priest. A priest that preaches that if they live without his god, they will meet a gruesome end.
+  70: Over eager Noble. A high noble will demand to be treated in a more amenable fashion, hes the son of a powerful noble in a nearby city.
+  71: A chest filled with gold. Sadly, the gold in the chest is invisible. So you will be smart enough to find something.
+  72: A bird fells out of the sky. A tiny bird fells on the ground. Probably sick.
+  73: Two humping dogs. Who does that in the middle of the day?
+  74: The sound of two lovers. A bit of the road, they hear moaning.
+  75: Beggar. A beggar at the side of the road, how pitiful.
+  76: A unicorn. How could it be, a unicorn is such a rare creature.
+  77: Eclipse. Suddenly, all becomes dark.
+  78: A freezing blizzard. If this continues, the party will need to find a warm source.
+  79: A powerless Warlock. This old man walks around with his imp in a cage, raging against his former master, seeing no warlock in him anymore. His skin is wrinkled and his back is bent. He is aimlessly looking for a way to restore his lost powers. 
+  80: Clumsy Scholar. A scholar walking about, dropping some of his scrolls or quills. He appears to be very stupid, but his mind has a special way of solving problems.
+  81: Juggling bear. His owner likes to show him off, the bear is quite good though.
+  82: Ran away kid. A kid who left his home, because he couldnt handle the stress of learning anymore.
+  83: Mad alchemist. He brews the special kind of potions.
+  84: Angry husband. This angry swordfighter is hitting a tree out of rage.
+  85: An archers trick. The man will just try to shoot an apple of his friends head. But the chances are that he will hit his friend though.
+  86: A man acting weird. Hes trying to move like a worm or caterpillar, his mind has been altered by a powerful mage.
+  87: A naked woman. Tied to a tree, she is gagged and cant scream.
+  88: Needy engineer. He needs money to start producing his automatic shooting device.
+  89: A traveling painter. He will offer to make paintings for people.
+  90: A man digging a hole. What does he has to hide? A body, a treasure? Is he just looking for something? Roll to find out.
+  91: Two centaurs. Casually walking with their bows in hand.
+  92: A mystic rune. A rune on the ground, a DC25 arcana check will tell them more.
+  93: An old tradesman. He runs through town and tries to sell some crap. A potion falls out of his cart as he leaves town, and a cat licks the liquid from the shattered flask on the ground. It turns into a ferocious beast who sets fire to one of the town houses.
+  94: A frozen man. In the middle of the road, with a look of fear and agony in his eyes.
+  95: A dead man. At least, he thinks hes dead, but he is not. He will act like he misses the sight of people talking to him. But feels weird when people act like they see him.
+  96: A wall of force. Blocking the road, on the other side a cart cant get past it.
+  97: A hungry wolf. Will beg at the campfire for food.
+  98: A sad druid. She lost her companion, will you help her find her pet?
+  99: A mute giant. Carrying a little kid, he seems to command him.(Large human,not a Giant race)
+  100: A group of Gnome tinkerers. Tinker and Golos

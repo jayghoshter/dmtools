@@ -824,7 +824,7 @@ results:
   822: 
   823: Each tooth has a type and a property. As a ritual  you can expend one tooth to gain its property for 24 hours or until a new ritual has been performed. Constructs  Oozes  and Plants are unaffected by this item. Undead whose essence you sap grant you a tooth with the type that it possessed in life rather than undeath.
   824: 
-  825: *Aberrations You can magically transmit simple messages and images to any creature within 120 ft. that can understand a Language. This form of telepathy doesn't allow the receiving creature to telepathically respond.
+  825: Aberrations You can magically transmit simple messages and images to any creature within 120 ft. that can understand a Language. This form of telepathy doesn't allow the receiving creature to telepathically respond.
   826: 
   827: *Beasts Your hit point maximum increases by an amount equal to twice your level.
   828: 

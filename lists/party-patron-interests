@@ -9,13 +9,13 @@ items:
   - Drugs. 
   - Adulation of the masses. 
   - The fear of everyone around them. 
-  - The best music, shared with the world or just for them, and at their own whim. 
+  - The best music, shared with the world or just for them, and at their own whim
   - The rarest foods, cooked by the best chefs, for the most exquisite and rare experiences. 
   - Obtain protective magic items, so that they can never be hurt. 
   - The complete destruction of anyone who opposes them. 
   - The elimination of a particular family or dynastic house. 
   - 
-    - Mastery of a particular skill (**1d6**). 
+    - Mastery of a particular skill (**1d6**).
     - 
       type: list
       pick: 1
@@ -66,16 +66,16 @@ items:
   - Prevent a particular species from being able to use magic. 
   - Eliminate from society those who do not contribute value. 
   - 
-    - Education the masses on good taste in. 
+    - Educate the masses on good taste in. 
     -
       dice: 1d6
       results:
-        1. Poetry; 
-        2. Fashionable clothing; 
-        3. Music; 
-        4. Needlepoint; 
-        5. Calligraphy; 
-        6. Floral arrangement 
+        1: Poetry
+        2: Fashionable clothing
+        3: Music
+        4: Needlepoint
+        5: Calligraphy
+        6: Floral arrangement 
   - 
     - Educate the masses in the proper maintenance of personal health through (1d6). 
     - 

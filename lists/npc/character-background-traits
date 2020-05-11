@@ -1,4 +1,4 @@
-roll: 1d100
+dice: 1d100
 results:
   1: Was exiled by their brother the king
   2: Petrified to stone for over 200 years
@@ -11,13 +11,13 @@ results:
   9: Wants to clear his name
   10: Drunkenly swore a blood oath and forgot what for
   11: Insists they are the reincarnation of a legendary warrior
-  12: Doesn’t understand sarcasm
+  12: Doesnt understand sarcasm
   13: Believes trees can speak to them and them alone
   14: Seeks to end an family feud
   15: Hates being made to wait
   16: Carries a charmed locket that they can't open
   17: Always cuts to the chase
-  18: Can’t tell a lie, no matter the cost
+  18: Cant tell a lie, no matter the cost
   19: Is searching for the knowledge of true immortality
   20: Framed for the murder of a famous and well-loved innkeeper
   21: Beaten and imprisoned for their religious beliefs
@@ -76,11 +76,11 @@ results:
   74: Never stands an insult
   75: Doesn't believe in the gods - even though they have seen one with his own eyes
   76: Always takes credit
-  77: Can’t resist a wager
+  77: Cant resist a wager
   78: If some says any number lower than 8, your must pass a constitution check or keep counting to 8.
   79: Carries a cryptic treasure map they won in a tavern bet
   80: You cannot pronounce your own name correctly.
-  81: You know “fun facts” about everything. They are usually wrong
+  81: You know fun facts about everything. They are usually wrong
   82: You absolutely REFUSE to sleep without a trinket of some kind. (a blanket, a stuffed animal, a pillow, etc.)
   83: You introduce yourself by a slightly different name every time
   84: You believe that Undead, have rights just like regular people. You must only fight them, in self defense
@@ -92,7 +92,7 @@ results:
   90: Can't swim
   91: Unwittingly misuses words all the bloody time
   92: Has a regular sleepwalking issue
-  93: Never passes up a chance to say ‘I told you so’
+  93: Never passes up a chance to say I told you so
   94: Doesn't believe in magic, ever
   95: Is afraid the rest of the party will kill them if they try to leave
   96: Gets nervous when speaking in front of crowds
