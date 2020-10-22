@@ -24,6 +24,9 @@
 # TODO: parseargs: allow multiple enc files, roland-like wrapper
 # TODO: refactor with OOP
 # TODO: save/resume state?
+# TODO: make -ve HP = 0 hp
+# TODO: unclutter dead villains from displayed hp table
+# TODO: Add conditions (show in table) (probably better to program with OOP)
 
 
 # CONSIDER: Instead of constant prompts: just ask for a "command", after "who" is selected: arNdM -> attack roll with NdM, drNdM is damage roll.
@@ -49,8 +52,12 @@ from rich.console import Console
 from rich.table import Column, Table
 from iterfzf import iterfzf
 
-console = Console()
-console.print("Welcome to the DND Encounter Handler", style="bold red")
+# def printee(*args, **kwargs):
+#     message = " ".join(map(str,args))
+#     sty = kwargs.get('sty', None)
+#     console.print(message, style=sty)
+#     with open("logfile.log", "a") as log:
+#         log.write(message)
 
 def roll(string):
     if string == '':
@@ -192,10 +199,14 @@ def print_rich_table():
     table.add_column("Name")
     table.add_column("HP")
     for key in inits:
-        table.add_row( key, str(hps[key]))
+        if hps[key] > 0:
+            table.add_row( key, str(hps[key]))
     console.print(table)
 
 
+console = Console()
+console.print("Welcome to the DND Encounter Handler", style="bold red")
+# printee("Welcome to the DND Encounter Handler", sty="bold red")
 
 inits={}
 hps = {}
@@ -258,6 +269,7 @@ while 1:
                 hps.update({who:hps[who] - dmg})
                 print_rich_table()
                 if hps[who] <= 0:
+                    hps[who] = 0
                     console.print(who, "is dead!", style="bold red")
                 iattack = iattack + 1
                 print('[bold green] whom to attack [/bold green] [', iattack, ']: ', end='')

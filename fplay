@@ -1,26 +1,103 @@
 #!/bin/bash
-
 ## fuzzy search and edit text file lines. 
 ## I use it as a character sheet
+## ctrl-r rolls d20 + mod if mod exists in current line
+
+## DONE: handle weapons and damage
+## TODO: preview cache file with rolls?
+## TODO: Spell slot management
+
+## NOTE: make sure roll.py is in your PATH
 
 set -euo pipefail
 
-FILE="/home/jayghoshter/Dropbox/Notes/DND/campaigns/Faerun/gala.txt"
+FILE="${1:-/home/jayghoshter/Dropbox/DND/Faerun/gala.txt}"
+CACHE="~/.cache/fplay"
+
+function roller()
+{
+    prefix="$1"
+    # mod="$2"
+    # dmg="$3"
+    # string="$4"
+    rollstr="$2"
+    string="$3"
+
+    # if [[ "$mod" =~ [+-]?[az]?[d]?[0-9]+$ ]]; then
+    #     echo "$string"
+    #     roll.py "$prefix$mod"
+    # elif [ "$mod" = "-" ]; then
+    #     echo "$string"
+    # elif [ "$mod" != "-" ]; then
+    #     roll.py "$prefix""d20"
+    # fi
+    # [[ "$dmg" =~ ^[0-9] ]] && roll.py "$dmg"
+    # read -e -i "${dummy:-}" dummy
+    # echo 
+
+    if [[ "$rollstr" =~ [+-]?[az]?[0-9]*[d]?[0-9]+ ]]; then
+        echo "$string"
+        if [[ "$rollstr" =~ [+-][0-9]+ ]] && [[ "$prefix" =~ [az] ]]; then
+            rollstr="d20$rollstr"
+        fi
+        roll.py "$prefix$rollstr"
+    elif [ "$rollstr" = "-" ]; then
+        echo "$string"
+    elif [ "$rollstr" != "-" ]; then
+        roll.py "$prefix""d20"
+    fi
+    read -e -i "${dummy:-}" dummy
+    echo 
+
+}
 
 while true; do
-    OUT=$(cat "$FILE" | fzf -e --expect=ctrl-e,ctrl-o --bind esc:ignore)
+    OUT=$(cat "$FILE" | fzf -e --expect=ctrl-e,ctrl-o,ctrl-r,ctrl-a,ctrl-z,ctrl-i,ctrl-x --bind esc:ignore)
 
     key=$(echo "$OUT" | cut -d $'\n' -f 1)
     line=$(echo "$OUT" | cut -d $'\n' -f 2)
+        
+    string=$(echo "$line" | cut -d ':' -f 1 )
+    rollstr=$(echo "$line" | cut -d ':' -f 2 )
+    # mod=$(echo "$line" | cut -d ':' -f 2 | cut -d '|' -f 1 | tr -d ' ')
+    # dmg=$(echo "$line" | cut -d ':' -f 2 | cut -d '|' -f 2 | tr -d ' ')
+
+    # echo "$mod and $dmg"
+    # exit
 
     if [ "$key" == "ctrl-e" ]; then 
         read -p "Edit:" -e -i "$line" eline
         sed -i "s/$line/$eline/" "$FILE"
         continue
+    elif [ "$key" == "ctrl-r" ]; then 
+        # roller "" "$mod" "$dmg" "$string"
+        roller "" "$rollstr" "$string"
+        continue
+    elif [ "$key" == "ctrl-a" ]; then 
+        # roller "a" "$mod" "$dmg" "$string" 
+        roller "a" "$rollstr" "$string"
+        continue
+    elif [ "$key" == "ctrl-z" ]; then 
+        # roller "z" "$mod" "$dmg" "$string"
+        roller "z" "$rollstr" "$string"
+        continue
+    elif [ "$key" == "ctrl-i" ]; then
+        # roller "" "-" "$(echo -e "1d4\n1d6\n1d8\n1d10\n1d12\n1d20\n1d100" | fzf)" "Preset Roll"
+        roller "" "$(echo -e "1d4\n1d6\n1d8\n1d10\n1d12\n1d20\n1d100" | fzf)" "Preset Roll"
+        continue
     elif [ "$key" == "ctrl-o" ]; then
         $EDITOR "$FILE"
         continue
+    elif [ "$key" == "ctrl-x" ]; then
+        ## For HP manipulations
+        read -p "Add or Subtract:" -e -i "$rollstr" addstr
+        final=$(bc <<< "$addstr")
+        sed -i "s/$line/${line%:*}: $final/" "$FILE"
+        continue
     fi
 
-    [ -n "$OUT" ] && echo "$OUT" | fold -w 75 -s | less
+    [[ "$string" =~ "- Spell" ]] && fdnd -s spell "${string#- Spell}" || echo "$OUT" | fold -w 75 -s | less
+    # [[ "$string" =~ "- Spell" ]] && fdnd -s spell "${string#- Spell}" || echo "$OUT" | vipe -r +Goyo
+
+    # [ -n "$OUT" ] && echo "$OUT" | fold -w 75 -s | less
 done

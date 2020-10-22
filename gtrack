@@ -9,7 +9,7 @@ set -euo pipefail
 # SILVER STANDARD NOT IMPLEMENTED (Only affects rebalancing). 
 
 
-bank="/home/jayghoshter/Dropbox/dnd-bank.txt"
+bank="/home/jayghoshter/Dropbox/DND/Faerun/finances.csv"
 balance=$(tail -1 "$bank")
 
 function transact()

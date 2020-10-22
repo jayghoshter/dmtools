@@ -11,6 +11,9 @@ scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 file="DnDAppFiles/Compendiums/Full Compendium.xml"
 LIST="$scriptDir/$file"
 
-out=$(xq -r '.compendium.'"$1"'[] | select ('"$2"') | [.name, '"$3"'] | @tsv' "$LIST")
+out=$(xq -r '.compendium.'"$1"'[] | select ('"$2"') | [.name, '"$3"'] | '"${4:-@tsv}"' ' "$LIST")
+# out=$(xq -r '.compendium.'"$1"'[] | select ('"$2"') | [.name, '"$3"'] | @csv' "$LIST")
+echo -e "$out" | column -t -o $'\t' -s $'\t' | sort -t $'\t' -k 2 -n  
 
-echo -e "$out" | column -t -o $'\t' -s $'\t'
+# out=$(xq -r '.compendium.'"$1"'[] | select ('"$2"') | [.name, '"$3"']' "$LIST")
+# echo -e "$out"

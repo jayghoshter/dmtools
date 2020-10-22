@@ -9,10 +9,30 @@ set -euo pipefail
 scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 file="DnDAppFiles/Compendiums/Full Compendium.xml"
 LIST="$scriptDir/$file"
+SINGLEMODE=""
+
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+    key="$1"
+
+    case $key in
+        -s|--single)
+            SINGLEMODE="ON"
+            shift # past value
+            ;;
+        *)    # unknown option
+            POSITIONAL+=("$1") # save it in an array for later
+            shift # past argument
+            ;;
+    esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
 
 TAG="$1"
 QUERY="${2:-}"
-name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore -q "$QUERY")
+name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf -1 --bind esc:ignore -q "$QUERY")
 while [ -n "$name" ]; do
     data=$(xq -r --arg n "$name" '.compendium.'"$TAG"'[] | select(.name == $n)' "$LIST")
     echo "$data" | grep -i --color=always -e "^" \
@@ -22,11 +42,18 @@ while [ -n "$name" ]; do
             -e "[0-9]* minute[s]\?" \
             -e "[0-9]* hour[s]\?" \
             -e "[0-9]* day[s]\?" \
+            -e "[0-9]* foot" \
+            -e "[0-9]* feet" \
             -e "\(dis\)\?advantage" \
             -e "damage" \
             -e "acid\|bludgeoning\|cold\|fire\|force\|lightning\|necrotic\|piercing\|poison\|psychic\|radiant\|slashing\|thunder" \
             -e "strength\|dexterity\|constitution\|intelligence\|wisdom\|charisma" \
             -e "blinded\|charmed\|deafened\|exhaustion\|frightened\|grappled\|incapacitated\|invisible\|paralyzed\|petrified\|poisoned\|prone\|restrained\|stunned\|unconscious" \
             | less
-    name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore -q "$QUERY")
+
+    if [[ "$SINGLEMODE" == "ON" ]]; then
+        name=""
+    else
+        name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore -q "$QUERY")
+    fi
 done
