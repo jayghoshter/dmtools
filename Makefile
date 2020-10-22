@@ -9,3 +9,5 @@ install:
 	ln -sfn $(PWD)/scripts/fdfil ~/local/bin/fdfil
 	ln -sfn $(PWD)/scripts/gtrack ~/local/bin/gtrack
 	ln -sfn $(PWD)/scripts/monmake ~/local/bin/monmake
+	ln -sfn $(PWD)/scripts/json2fplay ~/local/bin/json2fplay 
+	ln -sfn $(PWD)/scripts/fplay2json ~/local/bin/fplay2json

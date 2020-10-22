@@ -1,0 +1,5 @@
+#!/bin/bash
+
+python -mjson.tool "$1" > /dev/null || exit
+
+sed -i 's/"//g;s/,$//;/{/d;/}/d;s/^\s\+//;' "$1"

@@ -1,0 +1,214 @@
+Fire Bolt                    	,0
+Fist of Air                  	,0
+Friends                      	,0
+Guidance                     	,0
+Light                        	,0
+Mending                      	,0
+Minor Illusion               	,0
+Produce Flame                	,0
+Resistance                   	,0
+Sacred Flame                 	,0
+Spare the Dying              	,0
+Thaumaturgy                  	,0
+Toll the Dead                	,0
+Ward Against Undeath         	,0
+Word of Radiance             	,0
+Animal Friendship            	,1
+Armor of Earth               	,1
+Bane                         	,1
+Bless                        	,1
+Burning Hands                	,1
+Ceremony                     	,1
+Charm Person                 	,1
+Command                      	,1
+Compelled Duel               	,1
+Create or Destroy Water      	,1
+Cure Wounds                  	,1
+Detect Evil and Good         	,1
+Detect Magic                 	,1
+Detect Poison and Disease    	,1
+Disguise Self                	,1
+Dissonant Whispers           	,1
+Divine Favor                 	,1
+Entangle                     	,1
+Expeditious Retreat          	,1
+Faerie Fire                  	,1
+False Life                   	,1
+Feather Fall                 	,1
+Fog Cloud                    	,1
+Guiding Bolt                 	,1
+Healing Word                 	,1
+Hellish Rebuke               	,1
+Heroism                      	,1
+Identify                     	,1
+Inflict Wounds               	,1
+Longstrider                  	,1
+Magic Missile                	,1
+Protection from Evil and Good	,1
+Purify Food and Drink        	,1
+Ray of Sickness              	,1
+Sanctuary                    	,1
+Searing Smite                	,1
+Shield of Faith              	,1
+Sleep                        	,1
+Speak with Animals           	,1
+Thunderwave                  	,1
+Aid                          	,2
+Augury                       	,2
+Barkskin                     	,2
+Blindness/Deafness           	,2
+Blur                         	,2
+Calm Emotions                	,2
+Continual Flame              	,2
+Crown of Madness             	,2
+Enhance Ability              	,2
+Enthrall                     	,2
+Find Traps                   	,2
+Flaming Sphere               	,2
+Gentle Repose                	,2
+Gust of Wind                 	,2
+Heat Metal                   	,2
+Hold Person                  	,2
+Lesser Restoration           	,2
+Locate Object                	,2
+Magic Weapon                 	,2
+Mirror Image                 	,2
+Misty Step                   	,2
+Nystul's Magic Aura          	,2
+Pass without Trace           	,2
+Prayer of Healing            	,2
+Protection from Poison       	,2
+Ray of Enfeeblement          	,2
+Rope Trick                   	,2
+Scorching Ray                	,2
+Shatter                      	,2
+Silence                      	,2
+Spike Growth                 	,2
+Spiritual Weapon             	,2
+Suggestion                   	,2
+Warding Bond                 	,2
+Zone of Truth                	,2
+Animate Dead                 	,3
+Beacon of Hope               	,3
+Bestow Curse                 	,3
+Blink                        	,3
+Call Lightning               	,3
+Clairvoyance                 	,3
+Create Food and Water        	,3
+Crusader's Mantle            	,3
+Daylight                     	,3
+Dispel Magic                 	,3
+Elemental Weapon             	,3
+Fear                         	,3
+Feign Death                  	,3
+Fireball                     	,3
+Fly                          	,3
+Glyph of Warding             	,3
+Hypnotic Pattern             	,3
+Life Transference            	,3
+Magic Circle                 	,3
+Major Image                  	,3
+Mass Healing Word            	,3
+Meld into Stone              	,3
+Nondetection                 	,3
+Plant Growth                 	,3
+Protection from Energy       	,3
+Remove Curse                 	,3
+Revivify                     	,3
+Sending                      	,3
+Sleet Storm                  	,3
+Slow                         	,3
+Speak with Dead              	,3
+Spirit Guardians             	,3
+Tongues                      	,3
+Vampiric Touch               	,3
+Water Breathing              	,3
+Water Walk                   	,3
+Wind Wall                    	,3
+Arcane Eye                   	,4
+Banishment                   	,4
+Blight                       	,4
+Compulsion                   	,4
+Confusion                    	,4
+Conjure Minor Elementals     	,4
+Control Water                	,4
+Death Ward                   	,4
+Dimension Door               	,4
+Divination                   	,4
+Dominate Beast               	,4
+Fabricate                    	,4
+Freedom of Movement          	,4
+Grasping Vine                	,4
+Guardian of Faith            	,4
+Ice Storm                    	,4
+Leomund's Secret Chest       	,4
+Locate Creature              	,4
+Otiluke's Resilient Sphere   	,4
+Phantasmal Killer            	,4
+Polymorph                    	,4
+Power of the Earth           	,4
+Stone Shape                  	,4
+Stoneskin                    	,4
+Test of Souls                	,4
+Wall of Fire                 	,4
+Animate Objects              	,5
+Antilife Shell               	,5
+Cloudkill                    	,5
+Commune                      	,5
+Cone of Cold                 	,5
+Conjure Elemental            	,5
+Contagion                    	,5
+Creation                     	,5
+Dawn                         	,5
+Destructive Wave             	,5
+Dispel Evil and Good         	,5
+Dominate Person              	,5
+Fair Light                   	,5
+Flame Strike                 	,5
+Geas                         	,5
+Greater Restoration          	,5
+Hallow                       	,5
+Hold Monster                 	,5
+Holy Weapon                  	,5
+Insect Plague                	,5
+Legend Lore                  	,5
+Light of the Moon            	,5
+Mass Cure Wounds             	,5
+Modify Memory                	,5
+Planar Binding               	,5
+Raise Dead                   	,5
+Scrying                      	,5
+Seeming                      	,5
+Teleportation Circle         	,5
+Tree Stride                  	,5
+Wall of Force                	,5
+Wall of Stone                	,5
+Blade Barrier                	,6
+Create Undead                	,6
+Find the Path                	,6
+Forbiddance                  	,6
+Harm                         	,6
+Heal                         	,6
+Heroes' Feast                	,6
+Planar Ally                  	,6
+True Seeing                  	,6
+Word of Recall               	,6
+Conjure Celestial            	,7
+Divine Word                  	,7
+Etherealness                 	,7
+Fire Storm                   	,7
+Plane Shift                  	,7
+Regenerate                   	,7
+Resurrection                 	,7
+Symbol                       	,7
+Temple of the Gods           	,7
+Antimagic Field              	,8
+Control Weather              	,8
+Earthquake                   	,8
+Holy Aura                    	,8
+Anwyn's Elysian Palace       	,9
+Astral Projection            	,9
+Gate                         	,9
+Judgment of Maal             	,9
+Mass Heal                    	,9
+True Resurrection            	,9

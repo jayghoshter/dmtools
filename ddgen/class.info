@@ -1,0 +1,15 @@
+Artificer (UA) ;8 ;Constitution, Intelligence, Arcana, History, Investigation, Medicine, Nature, Perception, Sleight of Hand ;light armor, medium armor, shields ;simple weapons, hand crossbows, heavy crossbows ;Thieves' tools, tinker's tools, one type of artisan's tools of your choice ;5d4x10
+Barbarian ;12;Strength, Constitution, Animal Handling, Athletics, Intimidation, Nature, Perception, Survival ;light armor, medium armor, shields ;simple weapons, martial weapons ;none ;2d4x10
+Bard ;8 ;Dexterity, Charisma ;light armor ;simple weapons, hand crossbows, longswords, rapiers, shortswords ;three musical instruments of your choice ;5d4x10
+Cleric ;8 ;Wisdom, Charisma, History, Insight, Medicine, Persuasion, Religion ;light armor, medium armor, shields ;simple weapons ;none ;5d4x10
+Druid ;8 ;Intelligence, Wisdom, Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, Survival ;light armor, medium armor, shields (druids will not wear armor or use shields made of metal);clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears;herbalism kit ;2d4x10
+Fighter ;10;Strength, Constitution, Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, Survival ;light armor, medium armor, heavy armor, shields ;simple weapons, martial weapons ;none ;5d4x10
+Monk ;8 ;Strength, Dexterity, Acrobatics, Athletics, History, Insight, Religion, Stealth ;none ;simple weapons, shortswords ;any one type of artisan's tools or any one musical instrument of your choice;5d4
+Mystic (UA) ;8 ;Intelligence, Wisdom, Arcana, History, Insight, Medicine, Nature, Perception, Religion ;light armor ;simple weapons ;none ;5d4x10
+Paladin ;10;Wisdom, Charisma, Athletics, Insight, Intimidation, Medicine, Persuasion, Religion ;light armor, medium armor, heavy armor, shields ;simple weapons, martial weapons ;none ;5d4x10
+Ranger (Revised) (UA);10;Strength, Dexterity, Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, Survival ;light armor, medium armor, shields ;simple weapons, martial weapons ;none ;5d10x4
+Ranger ;10;Strength, Dexterity, Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, Survival ;light armor, medium armor, shields ;simple weapons, martial weapons ;none ;5d4x10
+Rogue ;8 ;Dexterity, Intelligence, Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, Stealth;light armor ;simple weapons, hand crossbows, longswords, rapiers, shortswords ;thieves' tools ;4d4x10
+Sorcerer ;6 ;Constitution, Charisma, Arcana, Deception, Insight, Intimidation, Persuasion, Religion ;none ;daggers, darts, slings, quarterstaffs, light crossbows ;none ;3d4x10
+Warlock ;8 ;Wisdom, Charisma, Arcana, Deception, History, Intimidation, Investigation, Nature, Religion ;light armor ;simple weapons ;none ;4d4x10
+Wizard ;6 ;Intelligence, Wisdom, Arcana, History, Insight, Investigation, Medicine, Religion ;none ;daggers, darts, slings, quarterstaffs, light crossbows ;none ;4d4x10
