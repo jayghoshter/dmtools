@@ -1,0 +1,34 @@
+#!/bin/bash
+
+file="$HOME/Repositories/dmtools/DnDAppFiles/Compendiums/Full Compendium.xml"
+QUERY="${1:-}"
+
+name=$(xq -r '.compendium.monster[].name' "$file" | fzf --bind esc:ignore -q "$QUERY")
+monster=$(xq -r --arg n "$name" '.compendium.monster[] | select(.name == $n)' "$file")
+
+name=$(echo "$monster" | jq -r '.name')
+ac=$(echo "$monster" | jq -r '.ac')
+hp=$(echo "$monster" | jq -r '.hp')
+speed=$(echo "$monster" | jq -r '.speed')
+stats="["$(echo "$monster" | jq -r '. | [.str, .dex, .con, .int, .wis, .cha] | @tsv' | tr '\t' ', ')"]"
+skill=$(echo "$monster" | jq -r '.skill')
+passive=$(echo "$monster" | jq -r '.passive')
+
+
+traits="\nTRAITS\n"$(echo "$monster" | jq -r '.trait | if type=="array" then . else [.] end | .[] | [.name, (.text | if type=="array" then .[] else . end)] | @tsv' | tr '\t' ': ')
+actions="\nACTIONS\n"$(echo "$monster" | jq -r '.action| if type=="array" then . else [.] end | .[] | [.name, (.text | if type=="array" then .[] else . end)] | @tsv' | tr '\t' ': ')
+attacks="\nATTACKS\n"$(echo "$monster" | jq -r '.action | if type=="array" then . else [.] end | .[] | [.name, .attack] | @tsv' | tr '\t' ': ' | sed 's/:[a-zA-Z ]*|/:+/' )
+legendary="\nLEGENDARY\n"$(echo "$monster" | jq -r '.legendary| if type=="array" then . else [.] end | .[] | [.name, (.text| if type=="array" then .[] else . end)] | @tsv' | tr '\t' ': ')
+
+
+echo -e "$name"
+echo -e "AC: $ac"
+echo -e "HP: $hp"
+echo -e "MV: $speed"
+echo -e "$stats"
+echo -e "$skill"
+echo -e "PP: $passive"
+echo -e "$attacks"
+echo -e "$traits"
+echo -e "$actions"
+echo -e "$legendary"
