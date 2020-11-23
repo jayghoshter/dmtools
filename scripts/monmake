@@ -1,6 +1,9 @@
 #!/bin/bash
 
-file="$HOME/Repositories/dmtools/DnDAppFiles/Compendiums/Full Compendium.xml"
+scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+# file="$HOME/Repositories/dmtools/DnDAppFiles/Compendiums/Full Compendium.xml"
+file="../DnDAppFiles/Compendiums/Full Compendium.xml"
+file="$scriptDir/$file"
 QUERY="${1:-}"
 
 name=$(xq -r '.compendium.monster[].name' "$file" | fzf --bind esc:ignore -q "$QUERY")
@@ -13,11 +16,17 @@ speed=$(echo "$monster" | jq -r '.speed')
 stats="["$(echo "$monster" | jq -r '. | [.str, .dex, .con, .int, .wis, .cha] | @tsv' | tr '\t' ', ')"]"
 skill=$(echo "$monster" | jq -r '.skill')
 passive=$(echo "$monster" | jq -r '.passive')
+vulnerable=$(echo "$monster" | jq -r '.vulnerable')
+resist=$(echo "$monster" | jq -r '.resist')
+immune=$(echo "$monster" | jq -r '.immune')
+conditionImmune=$(echo "$monster" | jq -r '.conditionImmune')
+senses=$(echo "$monster" | jq -r '.senses')
+languages=$(echo "$monster" | jq -r '.languages')
 
 
 traits="\nTRAITS\n"$(echo "$monster" | jq -r '.trait | if type=="array" then . else [.] end | .[] | [.name, (.text | if type=="array" then .[] else . end)] | @tsv' | tr '\t' ': ')
 actions="\nACTIONS\n"$(echo "$monster" | jq -r '.action| if type=="array" then . else [.] end | .[] | [.name, (.text | if type=="array" then .[] else . end)] | @tsv' | tr '\t' ': ')
-attacks="\nATTACKS\n"$(echo "$monster" | jq -r '.action | if type=="array" then . else [.] end | .[] | [.name, .attack] | @tsv' | tr '\t' ': ' | sed 's/:[a-zA-Z ]*|/:+/' )
+attacks="\nATTACKS\n"$(echo "$monster" | jq -r '.action | if type=="array" then . else [.] end | .[] | [.name, (.attack | if type=="array" then .[] else . end )] | @tsv' | tr '\t' ': ' | sed 's/:[a-zA-Z ]*|/:+/' )
 legendary="\nLEGENDARY\n"$(echo "$monster" | jq -r '.legendary| if type=="array" then . else [.] end | .[] | [.name, (.text| if type=="array" then .[] else . end)] | @tsv' | tr '\t' ': ')
 
 
@@ -25,9 +34,15 @@ echo -e "$name"
 echo -e "AC: $ac"
 echo -e "HP: $hp"
 echo -e "MV: $speed"
-echo -e "$stats"
-echo -e "$skill"
+echo -e "STATS: $stats"
+echo -e "SKILLS: $skill"
 echo -e "PP: $passive"
+[ -n "$vulnerable" ] && echo -e "vulnerable: $vulnerable"
+[ -n "$resist" ] && echo -e "resist: $resist"
+[ -n "$immune" ] && echo -e "immune: $immune"
+[ -n "$conditionImmune" ] && echo -e "conditionImmune: $conditionImmune"
+[ -n "$senses" ] && echo -e "senses: $senses"
+[ -n "$languages" ] && echo -e "languages: $languages"
 echo -e "$attacks"
 echo -e "$traits"
 echo -e "$actions"

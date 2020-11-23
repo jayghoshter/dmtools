@@ -1,0 +1,190 @@
+#!/bin/env python3
+
+"""
+Stolen from https://github.com/blu3id/python-pdf-form-filling
+
+Retrofitted to convert fplay json data to the standard dnd 1 page character sheet.
+
+NOTE: The name is a misnomer since I don't convert from the fplay colon-separated format. I do json -> pdf.
+"""
+
+import pdfrw
+from datetime import date
+import json
+from pathlib import Path
+from os import readlink
+import sys
+
+TEMPLATE_PATH = Path(readlink(Path(__file__))).parent / 'template.pdf'
+OUTPUT_PATH = 'charsheet.pdf'
+
+ANNOT_KEY = '/Annots'
+ANNOT_FIELD_KEY = '/T'
+ANNOT_VAL_KEY = '/V'
+ANNOT_RECT_KEY = '/Rect'
+SUBTYPE_KEY = '/Subtype'
+WIDGET_SUBTYPE_KEY = '/Widget'
+
+
+WpnArm = [ 'Armor Light', 'Armor Medium', 'Armor Heavy', 'Shields', 'Weapon Simple', 'Weapon Martial', 'Weapon Other']
+ABILITIES = [ 'STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA' ]
+ABILITIES_FULL = [ 'Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma' ]
+SKILLS = [ "Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival" ]
+
+
+def fill_pdf(input_pdf_path, output_pdf_path, data_dict):
+    template_pdf = pdfrw.PdfReader(input_pdf_path)
+    for page in template_pdf.pages:
+        annotations = page[ANNOT_KEY]
+        for annotation in annotations:
+            if annotation[SUBTYPE_KEY] == WIDGET_SUBTYPE_KEY:
+                if annotation[ANNOT_FIELD_KEY]:
+                    key = annotation[ANNOT_FIELD_KEY][1:-1]
+                    if key in data_dict.keys():
+                        if type(data_dict[key]) == bool:
+                            if data_dict[key] == True:
+                                annotation.update(pdfrw.PdfDict(
+                                    AS=pdfrw.PdfName('Yes')))
+                        else:
+                            annotation.update(
+                                pdfrw.PdfDict(V='{}'.format(data_dict[key]))
+                            )
+                            annotation.update(pdfrw.PdfDict(AP=''))
+    pdfrw.PdfWriter().write(output_pdf_path, template_pdf)
+
+
+def fill_char_data(data):
+    ## Core stats and text
+    data_transformed = { x:data[fieldTransform[x]] for x in fieldTransform}
+
+    ## Ability Scores
+    data_transformed.update({ abi:data['Ability Scores'].split('|')[index].strip() for index, abi in enumerate(ABILITIES) })
+
+    ## Armor & Weapon Proficiencies
+    data_transformed.update({'Proficiency ' + item: True if item.lower() in data['Proficiencies'].lower() else False for item in WpnArm })
+
+    ## Proficiencies and Languages
+    data_transformed.update({'ProficienciesLang': data['Proficiencies'] + '\n\n' + data['Languages']})
+
+    ## Equipment
+    data_transformed.update({'Equipment': data['Equipment'] + '\n\n' + data['Bag of Holding']})
+
+    ## Check Boxes
+    data_transformed.update({'Check Box ' + saveBoxes[key]: True for key in saveBoxes.keys() if key.lower() in data['Skill Proficiencies'].lower()})
+    data_transformed.update({'Check Box ' + skillBoxes[key]: True for key in skillBoxes.keys() if key.lower() in data['Skill Proficiencies'].lower()})
+
+    ## Skills
+    data_transformed.update({skill:data[skillTransform[skill]].strip() for skill in skillTransform})
+
+    ## Saves
+    data_transformed.update({'ST ' + abi:data[abi[0:3].upper() + ' Save'].strip() for abi in ABILITIES_FULL})
+
+
+    ## TODO: Features and Traits
+    ## TODO: Spell Save DC, Spell ATK etc
+
+    ## Weapons
+    ind = 0
+    for key in data:
+        if 'weapon' in key.lower():
+            data_transformed.update({WeaponTags[ind][0]: key.replace('Weapon ', '').replace('- ', '')})
+            data_transformed.update({WeaponTags[ind][1]: data[key].split('|')[0]})
+            data_transformed.update({WeaponTags[ind][2]: data[key].split('|')[1]})
+            ind = ind + 1
+            if ind > 2:
+                break
+
+    return fill_pdf(TEMPLATE_PATH, OUTPUT_PATH, data_transformed)
+
+fieldTransform = {
+        "CharacterName": "Name",
+        "ClassLevel": "Character Level",
+        "Race ": "Race",
+        "Alignment": "Alignment",
+        "Background": "Background",
+        "ClassLevel": "Class",
+        "HPMax": "Maximum Hit Points (HP)",
+        "HPCurrent": "Current Hit Points (HP)",
+        "HD": "Hit Dice",
+        "ProfBonus": "Proficiency Bonus",
+        "AC": "Armor Class (AC)",
+        "Initiative": "Initiative Bonus",
+        "Speed": "Speed",
+        "STRmod": "STR Modifier",
+        "DEXmod ": "DEX Modifier",
+        "CONmod": "CON Modifier",
+        "INTmod": "INT Modifier",
+        "WISmod": "WIS Modifier",
+        "CHamod": "CHA Modifier",
+        "SavingThrows1": "STR Save",
+        "SavingThrows2": "DEX Save",
+        "SavingThrows3": "CON Save",
+        "SavingThrows4": "INT Save",
+        "SavingThrows5": "WIS Save",
+        "SavingThrows6": "CHA Save",
+        "Spell Save DC 1": "Spell Save DC",
+        "Passive": "Passive Perception",
+        "Bag of Holding": "Bag of Holding"
+        }
+
+skillTransform = {
+        "Acrobatics"      : "Acrobatics",
+        "Animal"          : "Animal Handling",
+        "Arcana"          : "Arcana",
+        "Athletics"       : "Athletics",
+        "Deception "      : "Deception",
+        "History "        : "History",
+        "Insight"         : "Insight",
+        "Intimidation"    : "Intimidation",
+        "Investigation "  : "Investigation",
+        "Medicine"        : "Medicine",
+        "Nature"          : "Nature",
+        "Perception "     : "Perception",
+        "Performance"     : "Performance",
+        "Persuasion"      : "Persuasion",
+        "Religion"        : "Religion",
+        "SleightofHand"   : "Sleight of Hand",
+        "Stealth "        : "Stealth",
+        "Survival"        : "Survival"
+        }
+
+
+
+saveBoxes = {
+        'Strength': '11',
+        'Dexterity': '18',
+        'Constitution': '19',
+        'Intelligence': '20',
+        'Wisdom': '21',
+        'Charisma': '22',
+}
+
+skillBoxes = {
+        "Acrobatics"     : "23",
+        "Animal Handling": "24",
+        "Arcana"         : "25",
+        "Athletics"      : "26",
+        "Deception"      : "27",
+        "History"        : "28",
+        "Insight"        : "29",
+        "Intimidation"   : "30",
+        "Investigation"  : "31",
+        "Medicine"       : "32",
+        "Nature"         : "33",
+        "Perception"     : "34",
+        "Performance"    : "35",
+        "Persuasion"     : "36",
+        "Religion"       : "37",
+        "Sleight of Hand": "38",
+        "Stealth"        : "39",
+        "Survival"       : "40"
+        }
+
+WeaponTags = [ ('Wpn Name', 'Wpn1 AtkBonus', 'Wpn1 Damage'), ('Wpn Name 2', 'Wpn2 AtkBonus ', 'Wpn2 Damage '), ('Wpn Name 3', 'Wpn3 AtkBonus  ', 'Wpn3 Damage ')]
+
+
+if __name__ == '__main__':
+    data = {fieldTransform[x]:"" for x in fieldTransform}
+    with open(sys.argv[1]) as datafile:
+        data.update(json.load(datafile))
+        fill_char_data(data)

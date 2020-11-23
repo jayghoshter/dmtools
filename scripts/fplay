@@ -11,7 +11,7 @@
 
 set -euo pipefail
 
-FILE="${1:-/home/jayghoshter/Dropbox/DND/Faerun/gala.txt}"
+FILE="${1:-/home/jayghoshter/Dropbox/DND/Faerun/Galadir}"
 CACHE="~/.cache/fplay"
 
 function roller()

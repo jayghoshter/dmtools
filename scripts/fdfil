@@ -8,7 +8,7 @@
 set -euo pipefail
  
 scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
-file="DnDAppFiles/Compendiums/Full Compendium.xml"
+file="../DnDAppFiles/Compendiums/Full Compendium.xml"
 LIST="$scriptDir/$file"
 
 out=$(xq -r '.compendium.'"$1"'[] | select ('"$2"') | [.name, '"$3"'] | '"${4:-@tsv}"' ' "$LIST")

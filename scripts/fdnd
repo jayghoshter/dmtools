@@ -7,7 +7,7 @@
 set -euo pipefail
 
 scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
-file="DnDAppFiles/Compendiums/Full Compendium.xml"
+file="../DnDAppFiles/Compendiums/Full Compendium.xml"
 LIST="$scriptDir/$file"
 SINGLEMODE=""
 
