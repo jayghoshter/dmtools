@@ -220,6 +220,19 @@ backgrounds = {
 
 }
 
+alignments = [
+        'Lawful Good',
+        'Lawful Neutral',
+        'Lawful Evil',
+        'Neutral Good',
+        'True Neutral',
+        'Neutral Evil',
+        'Chaotic Good',
+        'Chaotic Neutral',
+        'Chaotic Evil'
+        ]
+
+
 # class General:
 #     def __init__(self):
 #         self.skills = {

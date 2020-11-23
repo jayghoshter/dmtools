@@ -4,7 +4,7 @@ from rich.console import Console
 from roll import roll
 from classes import Class
 from iterfzf import iterfzf
-from general import racial_stat_bonus, finesse, ranged, weapons, class_saves, class_hitdice, armors, modsmap, backgrounds
+from general import racial_stat_bonus, finesse, ranged, weapons, class_saves, class_hitdice, armors, modsmap, backgrounds, alignments
 import json
 
 import sys
@@ -46,6 +46,7 @@ class Character:
         self.tool_proficiencies = []
         self.spells = []
         self.background = ''
+        self.alignment = ''
         self.DATA={}
 
 
@@ -77,6 +78,7 @@ class Character:
 
 
         self.background = iterfzf(backgrounds)
+        self.alignment = iterfzf(alignments)
 
         ## Select Proficiencies from list of allowable skills
         self.proficiencies = iterfzf(self.proficiencies, multi=True, prompt="Background (" + self.background + "): "  + backgrounds[self.background] + ' ') or []
@@ -173,21 +175,32 @@ class Character:
         print(self.DATA)
 
     def compile(self):
-        self.DATA['name'] = self.name
-        self.DATA['race'] = self.race
+        self.DATA['Name'] = self.name
+        self.DATA['Race'] = self.race
         ## TODO: Make it class/level = Class N, Class M, ....
-        self.DATA['class'] = ', '.join([item.className for item in self.classes_list])
-        self.DATA['HP'] = str(self.HP)
-        self.DATA['AC'] = str(self.AC)
-        self.DATA['armor'] = armors[self.armors]
-        self.DATA['initiative'] = '{:+d}'.format(self.mods['Dexterity'])
-        self.DATA['proficiencies'] = ', '.join(self.saves + self.proficiencies)
+        self.DATA['Class'] = ', '.join([item.className for item in self.classes_list])
+        self.DATA['Maximum Hit Points (HP)'] = str(self.HP)
+        self.DATA['Current Hit Points (HP)'] = ""
+        self.DATA['Hit Dice'] = " ".join([ 'd' + str(class_hitdice[x]) for x in self.classes_list_names])
+        self.DATA['Speed'] = "30"
+        self.DATA['Spell Save DC'] = ""
+        self.DATA['Spell Attack Bonus'] = ""
+        self.DATA['Passive Perception'] = str(10 + self.mods['Dexterity'])
+        self.DATA['Languages'] = ""
+        self.DATA['Equipment'] = ""
+        self.DATA['Armor Class (AC)'] = str(self.AC)
+        self.DATA['Armor'] = armors[self.armors]
+        self.DATA['Initiative Bonus'] = '{:+d}'.format(self.mods['Dexterity'])
+        self.DATA['Skill Proficiencies'] = ', '.join(self.saves + self.proficiencies)
+        self.DATA['Proficiencies'] = "Armor, Weapons, Tools"
+        self.DATA['Background'] = self.background
+        self.DATA['Alignment'] = self.alignment
         if any( x in self.classes_list_names for x in  ['Rogue', 'Bard'] ):
-            self.DATA['expertise'] = ', '.join(self.expertise)
-        self.DATA['proficiency bonus'] = '{:+d}'.format(self.proficiency_bonus)
-        self.DATA['stats'] = ' | '.join([str(self.stats[key]) for key in self.stats.keys()])
+            self.DATA['Expertise'] = ', '.join(self.expertise)
+        self.DATA['Proficiency Bonus'] = '{:+d}'.format(self.proficiency_bonus)
+        self.DATA['Ability Scores'] = ' | '.join([str(self.stats[key]) for key in self.stats.keys()])
         for key in self.mods:
-            self.DATA[key[:3].upper() + ' modifier'] = '{:+d}'.format(self.mods[key])
+            self.DATA[key[:3].upper() + ' Modifier'] = '{:+d}'.format(self.mods[key])
         for key in self.skills:
             self.DATA[key] = '{:+d}'.format(self.skills[key])
         for item in self.weapons:
@@ -197,63 +210,22 @@ class Character:
                 bonus = self.mods['Dexterity']
             else:
                 bonus = self.mods['Strength']
-            self.DATA['- Weapon ' + item] = '{:+d}'.format(bonus + self.proficiency_bonus) + '|' + weapons[item] + '+' + str(bonus)
+            self.DATA['Weapon ' + item] = '{:+d}'.format(bonus + self.proficiency_bonus) + '|' + weapons[item] + '+' + str(bonus)
         for iclass in self.classes_list:
             if iclass.className == 'Rogue':
                 self.DATA['Sneak Attack Damage'] = str(int((iclass.level + 1)/2)) + 'd6'
         for item in self.spells:
-            self.DATA['- Spell ' + item] = ''
+            self.DATA['Spell ' + item] = ''
         for item in self.mods.keys():
             if item in self.saves:
-                self.DATA[item[:3].upper() + ' save'] = '{:+d}'.format(self.mods[item] + self.proficiency_bonus)
+                self.DATA[item[:3].upper() + ' Save'] = '{:+d}'.format(self.mods[item] + self.proficiency_bonus)
             else:
-                self.DATA[item[:3].upper() + ' save'] = '{:+d}'.format(self.mods[item])
+                self.DATA[item[:3].upper() + ' Save'] = '{:+d}'.format(self.mods[item])
 
     def writenew(self):
         self.compile()
         with open(self.name, 'w') as json_file:
             json.dump(self.DATA, json_file, indent=4)
-
-    # def write(self):
-    #     with open(self.name, 'w') as fp:
-    #         fp.write('name: ' + self.name + '\n')
-    #         fp.write('race: ' + str(self.race) + '\n')
-    #         fp.write('class: ' + ', '.join([item.className for item in self.classes_list]) + '\n')
-    #         # fp.write('level: ' + str(self.level) + '\n')
-    #         fp.write('hit points: ' + str(self.HP) + '\n')
-    #         fp.write('armor class: ' + str(self.AC) + '\n')
-    #         fp.write('armor: ' + armors[self.armors] + '\n')
-    #         fp.write('initiative: ' + '{:+d}\n'.format(self.mods['Dexterity']))
-    #         fp.write('proficiencies: ' + ', '.join(self.saves + self.proficiencies) + '\n')
-    #         fp.write('expertise: ' + ', '.join(self.expertise) + '\n')
-    #         fp.write('proficiency bonus: ' + '{:+d}\n'.format(self.proficiency_bonus))
-    #         # for key in self.stats:
-    #         #     fp.write(key + ' score' + ': ' + '{:d}\n'.format(self.stats[key]))
-    #         fp.write('stats: ' + ' | '.join([str(self.stats[key]) for key in self.stats.keys()]) + '\n')
-    #         for key in self.mods:
-    #             fp.write(key + ' modifier' + ': ' + '{:+d}\n'.format(self.mods[key]))
-    #         for key in self.skills:
-    #             fp.write(key + ': ' + '{:+d}\n'.format(self.skills[key]))
-    #         for item in self.weapons:
-    #             if item in finesse:
-    #                 bonus = max(self.mods['Strength'], self.mods['Dexterity'])
-    #             elif item in ranged:
-    #                 bonus = self.mods['Dexterity']
-    #             else:
-    #                 bonus = self.mods['Strength']
-    #             fp.write('- Weapon ' + item + ': ' + '{:+d}'.format(bonus + self.proficiency_bonus) + '|' + weapons[item] + '+' + str(bonus) + '\n')
-    #         # if self.Class == "Rogue":
-    #         #     fp.write('Sneak Attack Damage: ' + str(int((self.level + 1)/2)) + 'd6' + '\n')
-    #         for iclass in self.classes_list:
-    #             if iclass.className == 'Rogue':
-    #                 fp.write('Sneak Attack Damage: ' + str(int((iclass.level + 1)/2)) + 'd6' + '\n')
-    #         for item in self.spells:
-    #             fp.write('- Spell ' + item + ': ' + '\n')
-    #         for item in self.mods.keys():
-    #             if item in self.saves:
-    #                 fp.write(item + ' save: ' +'{:+d}\n'.format(self.mods[item] + self.proficiency_bonus))
-    #             else:
-    #                 fp.write(item + ' save: ' +'{:+d}\n'.format(self.mods[item]))
 
 
 console = Console()

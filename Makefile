@@ -12,6 +12,7 @@ install:
 	ln -sfn $(PWD)/scripts/json2fplay ~/local/bin/json2fplay 
 	ln -sfn $(PWD)/scripts/fplay2json ~/local/bin/fplay2json
 	ln -sfn $(PWD)/scripts/fplay2pdf ~/local/bin/fplay2pdf
-	zip -r $(PWD)/ddgen.zip $(PWD)/ddgen/*
-	echo '#!/usr/bin/env python3' | cat - $(PWD)/ddgen.zip > ~/local/bin/ddgen
+	rm -f $(PWD)/ddgen.zip
+	cd $(PWD)/ddgen && zip -r ../ddgen.zip *
+	echo '#!/usr/bin/env python3' | cat - $(PWD)/ddgen.zip > $(HOME)/local/bin/ddgen
 	chmod +x ~/local/bin/ddgen
