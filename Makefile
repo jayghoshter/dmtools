@@ -11,3 +11,7 @@ install:
 	ln -sfn $(PWD)/scripts/monmake ~/local/bin/monmake
 	ln -sfn $(PWD)/scripts/json2fplay ~/local/bin/json2fplay 
 	ln -sfn $(PWD)/scripts/fplay2json ~/local/bin/fplay2json
+	ln -sfn $(PWD)/scripts/fplay2pdf ~/local/bin/fplay2pdf
+	zip -r $(PWD)/ddgen.zip $(PWD)/ddgen/*
+	echo '#!/usr/bin/env python3' | cat - $(PWD)/ddgen.zip > ~/local/bin/ddgen
+	chmod +x ~/local/bin/ddgen
