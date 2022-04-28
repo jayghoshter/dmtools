@@ -1,0 +1,25 @@
+# lines starting with "#" are comments
+# name, number of units, HP, initiative rolls, probability of encounter
+# except name, all fields can be dice rolls. No subtraction is currently allowed
+# probability is a number [0, 100], which can be a dice roll, but is usually a fixed number
+# initiative of 0 implies no participation
+# additionally, can read stats from individual files for each character:
+#   - For ex: in case a file 'moony' exists, every turn, the info in the file will be 
+#   displayed during the player's attack roll. You can add known spells and traits to it.
+# 
+# creature        , num    , hp       , init      , prob (100) , #  Comments: note that the previous field must be comma separated
+moony             , 1      , 29       , d20       , 100        , #
+wormtail          , 1      , 29       , 0         , 100        , # 0 init because screw wormtail
+padfoot           , 1      , 43       , 21        , 100        , #
+prongs            , 1      , 29       , d20       , 100        , #
+boar              , 1d4    , 2d8+2    , d20       , 100        , # AC11
+giantboar         , 1      , 5d10+5   , d20       , 50         , # AC12
+# direwolf        , 1      , 5d10+10  , d20+2     , 100        , #
+# giantowl        , 1      , 3d10+3   , d20+2     , 100        , #
+# hyena           , 1      , 1d8+1    , d20+1     , 100        , #
+# ape             , 1      , 3d8+6    , d20+2     , 100        , #
+# owlbear         , 1      , 7d10+21  , d20+1     , 100        , #
+# worg            , 1      , 4d10+4   , d20+1     , 100        , #
+# deer            , 1      , 1d8      , d20+3     , 50         , #
+# elk             , 1d4    , 2d10+2   , d20       , 100        , # AC10
+# giantelk        , 1      , 5d12+10  , d20+3     , 50         , # AC15

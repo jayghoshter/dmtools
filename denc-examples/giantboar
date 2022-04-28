@@ -1,0 +1,7 @@
+Giant Boar
+[ AC 12, MV 40 ]
++ Charge: If attack after >=20' move
+    - Extra 2d6 slashing 
+    - DC13 Str save || knocked prone
++ Relentless: If <=10dmg would kill it, HP is instead 1.
+- Tusk: +5|10(2d6+3) slashing

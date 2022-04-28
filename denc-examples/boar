@@ -1,0 +1,8 @@
+Boar
+[ AC 11, MV 40 ]
++ Charge: If attack after >=20' move
+    - Extra 3(1d6) slashing 
+    - DC 11 Str save || knocked prone
++ Relentless (Recharge after long rest):
+    - if boar takes 7 damage or less that would reduce HP to 0, HP is reduced to 1 instead
+- Tusk: +5|10(1d6+1) slashing
