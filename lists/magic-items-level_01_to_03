@@ -1,0 +1,23 @@
+dice: 1d100
+times: 5
+results:
+  1-5: Spell Scroll (cantrip) 
+  6-10: Potion of Healing 
+  11-15: Quaal's Feather Token (Anchor) 
+  16-20: Spell Scroll (Level 1) 
+  21-25: Philter of Love 
+  26-30: Potion of Poison ​CURSED 
+  31-35: Elixir of Health 
+  36-40: Keoghtom's Ointment (1 dose) 
+  41-45: Spell Scroll Level 2 
+  46-50: (1d6) +1 Ammunition 
+  51-55: Potion of Fire Breath 
+  56-60: Potion of Greater Healing 
+  61-65: Potion of Climbing 
+  66-70: Potion of Heroism 
+  71-75: Potion of Invisibility 
+  76-80: Potion of Mind Reading 
+  81-85: Potion of Water Breathing 
+  86-90: Scroll of Protection 
+  91-95: Potion of Animal Friendship 
+  96-100: Nolzur's Marvelous Pigments 

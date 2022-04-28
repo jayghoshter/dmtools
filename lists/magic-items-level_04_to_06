@@ -1,0 +1,53 @@
+dice: 1d100
+times: 10
+results:
+  1-2 : Spell Scroll Level 3 
+  2-4 : Quaal's Feather Token Fan 
+  5-6 : Quaal's Feather Token Whip 
+  7-8 : Potion of Diminution 
+  9-10 : Potion of Growth 
+  11-12 : (2d6) +1 Ammunition 
+  13-14 : Dust of Disappearance 
+  15-16 : Necklace of Fireballs (One bead) 
+  17-18 : Potion of Gaseous Form 
+  19-20 : Potion of Resistance 
+  21-22 : Universal Solvent 
+  23-24 : Spell Scroll Level 4 
+  25-26 : Ivory Goat (Travail) 
+  27-28 : Vicious Weapon 
+  29-30 : +3 Ammunition (1) 
+  31-32 : Potion of Speed 
+  33-34 : Sovereign Glue 
+  35-36 : Horn of Blasting 
+  37-38 : Potion of Superior Healing 
+  39-40 : Dust of Dryness (1d4 pellets) 
+  41-42 : Dust of Sneezing and Choking 
+  43-44 : Keoghtom's Ointment (1d4+1 doses) 
+  45-46 : Oil of Slipperiness 
+  47-48 : (1d6) +2 Ammunition 
+  49-50 : Adamantine Armor 
+  51-52 : Helm of Comprehend Languages 
+  53-54 : Potion of Flying GAMECHANGING 
+  55-56 : (1d6) +3 Ammunition 
+  57-58 : Arrow of Slaying 
+  59-60 : Golden Lion (1) 
+  61-62 : Spell Scroll Level 5 
+  63-64 : Dust of Dryness (1d6 pellets) 
+  65-66 : Driftglobe
+  67-68 : Berserker Axe CURSED 
+  69-70 : Mithral Armor 
+  71-72 : Armor of Vulnerability CURSED 
+  73-74 : Trident of Fish Command 
+  75-76 : Bead of Force (1) 
+  77-78 : Elemental Gem 
+  79-80 : Potion of Clairvoyance 
+  81-82 : Potion of Vitality 
+  83-84 : Sword of Vengeance CURSED 
+  85-86 : Weapon +1 
+  87-88 : Cap of Water Breathing 
+  89-90 : Eversmoking Bottle 
+  91-92 : Quiver of Ehlonna 
+  93-94 : Ioun Stone Sustenance 
+  95-96 : Ivory Goat (Traveling) 
+  97-98 : Ring of Warmth 
+  99-100 : Sword of Life-Stealing 

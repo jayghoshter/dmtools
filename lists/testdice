@@ -1,0 +1,8 @@
+dice: 1d10
+times: 1
+results:
+    1: 'one'
+    2-5: 'twotofive'
+    6-8: 'sixtoeight'
+    9-10: 'ninetoten'
+

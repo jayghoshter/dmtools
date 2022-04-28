@@ -1,0 +1,53 @@
+dice: 1d100
+times: 10
+results:
+  1-2 : (2d6) +2 Ammunition 
+  2-4 : Ioun Stone Protection 
+  5-6 : Wand of the War Mage +1 
+  7-8 : Spell Scroll Level 6 
+  9-10 : Potion of Supreme Healing 
+  11-12 : Armor, +1 ​GAMECHANGING 
+  13-14 : Shield, +1 ​GAMECHANGING 
+  15-16 : Bracers of Archery 
+  17-18 : Circlet of Blasting 
+  19-20 : Chime of Opening 
+  21-22 : Goggles of Night 
+  23-24 : Horseshoes of the Zephyr 
+  25-26 : Javelin of Lightning 
+  27-28 : Mariner's Armor 
+  29-30 : Necklace of Adaptation 
+  31-32 : Prayer Bead-Smiting 
+  33-34 : Ring of Water Walking 
+  35-36 : Wand of Magic Detection 
+  37-38 : Wand of Secrets 
+  39-40 : Wind Fan 
+  41-42 : Sword of Sharpness 
+  43-44 : Demon Armor ​CURSED 
+  45-46 : Staff of the Adder 
+  47-48 : Oil of Etherealness 
+  49-50 : Dancing Sword 
+  51-52 : Glamoured Studded Leather 
+  53-54 : Gloves of Swimming and Climbing 
+  55-56 : Heward's Handy Haversack 
+  57-58 : Pipes of the Sewers 
+  59-60 : Prayer Bead-Bless 
+  61-62 : Rope of Climbing 
+  63-64 : Ring of Feather Falling 
+  65-66 : Saddle of the Cavalier 
+  67-68 : Sending Stones ​GAMECHANGING 
+  69-70 : Staff of the Python 
+  71-72 : Sword of Wounding 
+  73-74 : Frost Brand 
+  75-76 : Ioun Stone Absorption 
+  77-78 : Dagger of Venom 
+  79-80 : Boots of Elvenkind 
+  81-82 : Eyes of Minute Seeing 
+  83-84 : Eyes of the Eagle 
+  85-86 : Ring of Jumping 
+  87-88 : Spell Scroll Level 7 
+  89-90 : Dimensional Shackles 
+  91-92 : Eyes of Charming 
+  93-94 : Gloves of Missile Snaring 
+  95-96 : Ioun Stone Agility 
+  97-98 : Ioun Stone Fortitude 
+  99-100:  Ioun Stone Insight

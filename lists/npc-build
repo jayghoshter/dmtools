@@ -1,0 +1,10 @@
+type: files
+items: 
+    - npc/npc-physical-attributes
+    - npc/npc-voices
+    - npc/npc-professions
+    - npc/npc-personality-traits
+    - npc/npc-fears
+    - npc/fun-character-flaws
+    - npc/npc-quirks
+    - npc/character-mannerisms-and-quirks
