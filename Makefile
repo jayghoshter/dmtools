@@ -15,6 +15,7 @@ install:
 	ln -sfn $(PWD)/scripts/spells2pdf ~/local/bin/spells2pdf
 	ln -sfn $(PWD)/scripts/fcf ~/local/bin/fcf
 	ln -sfn $(PWD)/scripts/fcf2pdf ~/local/bin/fcf2pdf
+	ln -sfn $(PWD)/scripts/fdl ~/local/bin/fdl
 	rm -f $(PWD)/ddgen.zip
 	cd $(PWD)/ddgen && zip -r ../ddgen.zip *
 	echo '#!/usr/bin/env python3' | cat - $(PWD)/ddgen.zip > $(HOME)/local/bin/ddgen
