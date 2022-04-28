@@ -1,7 +1,10 @@
-- 
-  type: list
-  pick: 1
-  items:
+type: multilist
+times: 10
+pick:
+    - 1
+    - 1
+items: 
+  - 
     - Adrik
     - Alberich
     - Baern
@@ -52,10 +55,7 @@
     - Vonbin
     - Vondal
     - Whurbin
-- 
-  type: list
-  pick: 1
-  items:
+  - 
     - Aranore
     - Balderk
     - Battlehammer

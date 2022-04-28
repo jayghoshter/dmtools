@@ -1,7 +1,10 @@
-- 
-  type: list
-  pick: 1
-  items: 
+type: multilist
+times: 10
+pick:
+  - 1
+  - 1
+items: 
+  - 
     - Charl
     - Cuimeil
     - Daavin
@@ -55,10 +58,7 @@
     - Gideon
     - Brynjon
     - Fredwig
-- 
-  type: list
-  pick: 1
-  items: 
+  -
     - Alghalin
     - Arnstan
     - Arnstas

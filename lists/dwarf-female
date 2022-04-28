@@ -1,7 +1,10 @@
-- 
-  type: list
-  pick: 1
-  items: 
+type: multilist
+times: 10
+pick:
+    - 1
+    - 1
+items: 
+  - 
     - Anbera
     - Artin
     - Audhild
@@ -24,7 +27,7 @@
     - Helgret
     - Helja
     - Hlin
-    - llde
+    - Hullde
     - Jarana
     - Kathra
     - Kilia
@@ -52,10 +55,7 @@
     - Werydd
     - Whurd red
     - Yurgunn
--
-  type: list
-  pick: 1
-  items:
+  - 
     - Aranore
     - Balderk
     - Battlehammer
