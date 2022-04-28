@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+set -euo pipefail
+
+scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+file="../DnDAppFiles/Compendiums/Full Compendium.xml"
+LIST="$scriptDir/$file"
+
+CLASS="$1"
+QUERY="${2:-}"
+
+FEATURE=$(xq -r '.compendium.class[] | select(.name == "Warlock") | .autolevel[].feature | (if type=="array" then .[] else . end) | .name' "$LIST" | sed '/^null$/d' | fzf -1 --bind esc:ignore -q "$QUERY") 
+
+echo 
+
+## Abandoned. fcf2pdf was already implemented.

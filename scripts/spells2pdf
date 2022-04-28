@@ -1,0 +1,52 @@
+#!/bin/bash
+
+#DONE: Apply for multiple spells
+#DONE: Grep bold & italics from fdnd spell
+
+#[NOTE]:  Requires the dnd latex template 
+
+scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+file="$HOME/Repositories/dmtools/DnDAppFiles/Compendiums/Full Compendium.xml"
+# file="../DnDAppFiles/Compendiums/Full Compendium.xml"
+# file="$scriptDir/$file"
+QUERY="${1:-}"
+
+names=$(xq -r '.compendium.spell[].name' "$file" | fzf -m --bind esc:ignore -q "$QUERY")
+
+
+MDHEAD=$(echo -e "---\ndocumentclass: dndbook\nfontfamily: Alegreya\nclassoption:\n- twocolumn\n---\n")
+
+MDOUT=$(while IFS= read -r -d $'\n' name; do
+    # Arbitrary operations on "$file" here
+    monster=$(xq -r --arg n "$name" '.compendium.spell[] | select(.name == $n)' "$file")
+
+    name=$(echo "$monster" | jq -r '.name')
+    level=$(echo "$monster" | jq -r '.level')
+    school=$(echo "$monster" | jq -r '.school')
+    time=$(echo "$monster" | jq -r '.time')
+    range=$(echo "$monster" | jq -r '.range')
+    components=$(echo "$monster" | jq -r '.components')
+    duration=$(echo "$monster" | jq -r '.duration')
+    classes=$(echo "$monster" | jq -r '.classes')
+    # text=$(echo "$monster" | jq -r '.text')
+    roll=$(echo "$monster" | jq -r '.roll')
+
+
+    text="\n### DESCRIPTION\n"$(echo "$monster" | jq -r '.text | if type=="array" then . else [.] end | .[]' | sed 's/null//g')
+
+    text=$(echo "$text" |sed "s/[0-9]\+d[0-9]\+\|saving throw\|DC [0-9]*\|[0-9]* minute[s]\?\|[0-9]* hour[s]\?\|[0-9]* day[s]\?\|[0-9]* foot\|[0-9]* feet\|\(dis\)\?advantage\|damage\|acid\|bludgeoning\|cold\|fire\|force\|lightning\|necrotic\|piercing\|poison\|psychic\|radiant\|slashing\|thunder\|strength\|dexterity\|constitution\|intelligence\|wisdom\|charisma\|blinded\|charmed\|deafened\|exhaustion\|frightened\|grappled\|incapacitated\|invisible\|paralyzed\|petrified\|poisoned\|prone\|restrained\|stunned\|unconscious/**\0**/gI")
+
+    echo -e "\n## $name"
+    echo -e "**level**: $level"'\'
+    echo -e "**school**: $school"'\'
+    echo -e "**time**: $time"'\'
+    echo -e "**range**: $range"'\'
+    echo -e "**components**: $components"'\'
+    echo -e "**duration**: $duration"'\'
+    echo -e "**classes**: $classes"'\'
+    echo -e "**roll**: $roll"'\'
+    echo -e "$text"
+done <<< "$names" )
+
+echo -e "$MDHEAD\n$MDOUT"| pandoc - -o spells.pdf
+

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+## FCF: Fuzzy Class Feature
+## @usage: fcf <classname> 
+
+## TODO: make fcf to pdf
+
+# file="$HOME/Repositories/dmtools/DnDAppFiles/Compendiums/Full Compendium.xml"
+scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+file="../DnDAppFiles/Compendiums/Full Compendium.xml"
+file="$scriptDir/$file"
+
+echo "$file"
+
+DATA=$(xq -r --arg n "$1" '.compendium.class[] | select(.name == $n) | .autolevel[].feature | (if type=="array" then .[] else . end) ' "$file")
+
+# feature=$(echo "$DATA" | jq -r '.name' | sed '/null/d' | fzf --bind esc:ignore)
+# echo "$DATA" | jq -r --arg f "$feature" 'select(.name == $f)'
+
+features=$(echo "$DATA" | jq -r '.name' | sed '/null/d' | fzf -m --bind esc:ignore)
+MDHEAD=$(echo -e "---\ndocumentclass: dndbook\nfontfamily: Alegreya\nclassoption:\n- twocolumn\n---\n")
+MDOUT=$(while IFS= read -r -d $'\n' feature; do
+    FEAT=$(echo -e "$DATA" | jq -r --arg f "$feature" 'select(.name == $f)')
+    NAME=$(echo -e "$FEAT" | jq -r '.name' )
+    TEXT=$(echo -e "$FEAT" | jq -r '.text | if type=="array" then .[] else . end' )
+    echo -e "\n"
+    echo -e "## $NAME"
+    echo -e "$TEXT"
+done <<< "$features" )
+echo -e "$MDHEAD\n$MDOUT"| pandoc - -o features.pdf
+
+
