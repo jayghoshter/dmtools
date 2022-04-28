@@ -152,7 +152,7 @@ armors = {
         "Chain mail"      : "16",
         "Splint"          : "17",
         "Plate"           : "18",
-        "Shield"          : "+2"
+        "None"            : "10 + Dex modifier"
         }
 
 modsmap = {

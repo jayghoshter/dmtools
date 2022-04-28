@@ -1,12 +1,13 @@
 #!/bin/env python3
 
+from roll import roll
 from general import class_hitdice
+
 from iterfzf import iterfzf
 from rich.console import Console
-from roll import roll
-from pathlib import Path
 
-import sys
+# from pathlib import Path
+# import sys
 
 class Class:
     def __init__(self, className = ''):
@@ -35,10 +36,10 @@ class Class:
 
         self.addClassData()
 
-        self.level = ''
-        while self.level == '':
-            self.level = console.input("[bold yellow]" + self.className + " Level: [/]")
-        self.level = int(self.level)
+        levelstr = ''
+        while levelstr == '':
+            levelstr = console.input("[bold yellow]" + self.className + " Level: [/]")
+        self.level = int(levelstr)
 
         self.asi = [ 4, 8, 12, 16, 19]
         if self.className == 'Fighter':

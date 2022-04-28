@@ -1,13 +1,13 @@
 #!/bin/env python3
 
-from rich.console import Console
 from roll import roll
 from classes import Class
-from iterfzf import iterfzf
 from general import racial_stat_bonus, finesse, ranged, weapons, class_saves, class_hitdice, armors, modsmap, backgrounds, alignments
-import json
 
-import sys
+from rich.console import Console
+from iterfzf import iterfzf
+
+import json
 
 reroll_threshold = 70
 
@@ -29,7 +29,8 @@ class Character:
                 'Wisdom'      : 0,
                 'Charisma'    : 0  }
 
-        self.stats.update(self.genStats())
+        # self.stats.update(self.genStats())
+        self.stats = self.genStats()
 
 
         self.classes_list_names = iterfzf(class_hitdice, multi=True)
@@ -51,7 +52,6 @@ class Character:
 
 
         for classitem in self.classes_list:
-
             for item in classitem.asi:
                 if classitem.level >= item:
                     self.asi_update()
@@ -71,10 +71,10 @@ class Character:
         self.proficiencies        = list(set(self.proficiencies))
         self.expertise            = list(set(self.expertise))
         self.saves                = list(set(self.saves))
-        self.armor_proficiencies  = list(set(classitem.armor_proficiencies))
-        self.weapon_proficiencies = list(set(classitem.weapon_proficiencies))
-        self.tool_proficiencies   = list(set(classitem.tool_proficiencies))
-        self.spells               = list(set(classitem.spells))
+        self.armor_proficiencies  = list(set(self.armor_proficiencies))
+        self.weapon_proficiencies = list(set(self.weapon_proficiencies))
+        self.tool_proficiencies   = list(set(self.tool_proficiencies))
+        self.spells               = list(set(self.spells))
 
 
         self.background = iterfzf(backgrounds)
@@ -102,7 +102,7 @@ class Character:
 
         self.AC = 10
         self.weapons = iterfzf(weapons, multi=True, prompt='> '+', '.join(self.weapon_proficiencies)) or []
-        self.armors = iterfzf(armors, prompt='> '+', '.join(self.armor_proficiencies)) or []
+        self.armor = iterfzf(armors, prompt='> '+', '.join(self.armor_proficiencies))
 
         self.skills = {
                 'Acrobatics'     : self.mods['Dexterity'],
@@ -130,6 +130,9 @@ class Character:
 
 
     def rollStats(self):
+        """
+        Roll all stats and add racial bonuses
+        """
         statd = {}
         for key in self.stats:
             rolls = []
@@ -143,9 +146,10 @@ class Character:
 
     def genStats(self):
         total = 0
+        statd = None
         while total <= reroll_threshold:
             statd = self.rollStats()
-            total = sum([ statd[stat] for stat in statd])
+            total = sum([ statd[stat] for stat in statd ])
         console.print("[yellow bold]Stats after Racial Bonus: [/]", [statd[key] for key in statd])
         # print("STATS: ", [statd[key] for key in statd])
         console.print("[bold yellow]Total: [/]", total)
@@ -189,7 +193,7 @@ class Character:
         self.DATA['Languages'] = ""
         self.DATA['Equipment'] = ""
         self.DATA['Armor Class (AC)'] = str(self.AC)
-        self.DATA['Armor'] = armors[self.armors]
+        self.DATA['Armor'] = armors[self.armor]
         self.DATA['Initiative Bonus'] = '{:+d}'.format(self.mods['Dexterity'])
         self.DATA['Skill Proficiencies'] = ', '.join(self.saves + self.proficiencies)
         self.DATA['Proficiencies'] = "Armor, Weapons, Tools"
