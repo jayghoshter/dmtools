@@ -6,7 +6,7 @@ set -euo pipefail
 scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 cd "$scriptDir/../lists"
 
-out=$(fzf --expect=ctrl-o --bind esc:ignore) 
+out=$(ls | sort | fzf --expect=ctrl-o --bind esc:ignore) 
 
 while [ -n "$out" ]; do
 
