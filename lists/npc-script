@@ -1,0 +1,719 @@
+type: script
+times: 3
+data:
+  pronoun: 
+    - He
+    - She
+  race: 
+    - Human
+    - Elf
+    - Half-Elf
+    - Half-Orc
+    - Halfling
+    - Dwarf
+    - Goliath
+    - Tiefling
+    - Gnome
+  alignment: 
+    - Lawful good
+    - Lawful neutral
+    - Lawful evil
+    - Neutral good
+    - True neutral
+    - Neutral evil
+    - Chaotic good
+    - Chaotic neutral
+    - Chaotic evil
+  hair: 
+    - black
+    - grey
+    - white
+    - greying
+    - light brown
+    - medium brown
+    - dark brown
+    - dark blonde
+    - light blonde
+    - dirty blonde
+    - golden blonde
+    - red
+    - auburn
+    - salt and pepper
+  eyes: 
+    - black
+    - brown
+    - green
+    - blue
+    - grey
+    - amber
+    - hazel
+  wears: 
+    - royal and elegant clothes
+    - shabby clothes
+    - simple clothes
+    - baggy clothes
+    - tight clothes
+    - filthy clothes
+    - torn clothes
+    - ragged clothes
+    - leather armor
+    - studded leather armor
+    - chainmail armor
+    - full plate armor
+    - breastplate armor
+  background_trait: 
+    - was exiled by their brother the king
+    - petrified to stone for over 200 years
+    - the last of his ancient bloodline
+    - always takes first watch
+    - keeps a blacklist of people to kill
+    - became an adventurer because they lost a bet
+    - aims to learn every language in the land
+    - is wanted for a reward
+    - wants to clear his name
+    - drunkenly swore a blood oath and forgot what for
+    - insists they are the reincarnation of a legendary warrior
+    - doesn’t understand sarcasm
+    - believes trees can speak to them and them alone
+    - seeks to end a family feud
+    - hates being made to wait
+    - carries a charmed locket that they can't open
+    - always cuts to the chase
+    - can’t tell a lie, no matter the cost
+    - is searching for the knowledge of true immortality
+    - was framed for the murder of a famous and well-loved innkeeper
+    - was beaten and imprisoned for their religious beliefs
+    - keeps getting mistaken for a famous knight
+    - already made and lost a fortune
+    - has deserted from the army
+    - is trying to avoid a prophecy
+    - secretly became an adventurer to impress a love interest
+    - hates riding horses
+    - always gives the good/bad news first
+    - has cheated death more times than they deserved
+    - was raised as a hostage by their father's enemies
+    - is running from a marriage arranged by their parents
+    - can understand common, but only speaks (language)
+    - has a huge debt to pay back
+    - has no other family but the party
+    - never returned anything they borrowed
+    - ran afoul of the goblin mob
+    - seems to know everyone
+    - once served as a court jester
+    - has been exiled twice under different names
+    - is the twin of the local monarch
+    - is really (I mean really) afraid of the dark
+    - is trying to build a network of shady connections
+    - woke up in a bar with no memory and a sealed letter
+    - always keeps his promises
+    - worries some of their memories have been tampered with
+    - is terrified of rats
+    - suffers from claustrophobia
+    - is trapped in a faustian bargain
+    - ran away from home at the age of eleven
+    - always wakes up on the right side of the bed
+    - is afraid of sharp edges
+    - has gotten away with murder
+    - was a weapons instructor for the city militia
+    - loves to haggle
+    - often will offer a bribe over other persuasion tactics
+    - was expelled from the royal guards
+    - makes all minor decisions by flipping a coin
+    - is a former bare knuckle boxer
+    - always needs to be the centre of attention
+    - has an outstanding warrant for their arrest
+    - never takes their armour off, just in case
+    - is maniacally obsessed with etiquette
+    - rejected a foreign prince's marriage proposal
+    - used to work as a tavern bouncer
+    - only has two more years before a demon comes back to claim their soul
+    - doesn't have a reflection/shadow
+    - has anger problems
+    - bribed a nobleman to help them smuggle slaves out of a tyrannical kingdom
+    - believes plate armour is just a sign of being posh and over privileged
+    - is posing as someone else
+    - is on the run after having an affair with a noble's daughter
+    - is being hunted by a terrible monster
+    - wants to one day own their own ship
+    - never stands an insult
+    - doesn't believe in the gods - even though they have seen one with his own eyes
+    - always takes credit
+    - can’t resist a wager
+    - if some says any number lower than 8, your must pass a constitution check or keep counting to 8.
+    - carries a cryptic treasure map they won in a tavern bet
+    - cannot pronounce their own name correctly
+    - know “fun facts” about everything. They are usually wrong
+    - absolutely REFUSE to sleep without a trinket of some kind. (a blanket, a stuffed animal, a pillow, etc.)
+    - you introduce yourself by a slightly different name every time
+    - you believe that Undead, have rights just like regular people. You must only fight them, in self defense
+    - thinks they are a god/immortal being
+    - studied interior dungeon design
+    - hasn't accomplished anything in their short life yet
+    - distrusts all authority
+    - is downright racist towards the Undead
+    - can't swim
+    - unwittingly misuses words all the bloody time
+    - has a regular sleepwalking issue
+    - never passes up a chance to say ‘I told you so’
+    - doesn't believe in magic, ever
+    - is afraid the rest of the party will kill them if they try to leave
+    - gets nervous when speaking in front of crowds
+    - is afraid of heights
+    - a chef looking for the rarest/most exotic ingredients and cooking methods to create the ultimate gourmet experience
+    - an agent of the church looking to steal back/reclaim holy relics
+    - is adventuring to send money home to the family farm
+  fears:
+    - being identified by law enforcement, as the they are currently a fugitive
+    - being discovered masquerading as a member of the opposite sex
+    - not being liked by everyone
+    - not living up to everyone's expectations
+    - being killed by a random skirmish
+    - being discovered for cheating at gambling
+    - being discovered for robbing drunk citizens at night
+    - being discovered for killing travelers
+    - being replaced by someone more competent
+    - being swindled out of money
+    - being discovered as the murderer of the local \[Shop Kind\] owner who's body is rotting nearby
+    - being beaten by a rival
+    - losing their good reputation
+    - being killed by a rogue that was cheated
+    - being arrested for illegal activity
+    - losing their livelihood
+    - being robbed
+    - the wrath of \[Random Deity\]
+    - followers of \[Random Deity\]
+    - magic
+    - the voices in their head
+    - being convicted of a crime they didn't commit 
+    - rats and rodents 
+    - the end of the world 
+    - someone targeting them with spells 
+    - anyone missing an eye 
+    - being poisoned 
+    - clowns and court jesters 
+    - the eternal slumber that is death that will consume them eventually 
+    - insects 
+    - enchantment magic 
+    - illusion magic 
+    - debuff spells 
+    - one day discovering that they're crazy 
+    - damage to their property 
+    - aberrations 
+    - undead 
+    - fey 
+    - elementals
+    - Drow
+    - Duergar
+    - Orcs
+    - Goblins
+    - Kobolds
+    - Gnomes
+    - Elves
+    - Halflings. Small hands, smell like cabbage...
+    - ghosts
+    - thunder and lightning
+    - drowning
+    - fire
+    - darkness
+    - outsiders
+    - sorcerers
+    - divine magic
+    - snakes
+    - spiders
+    - enclosed spaces
+    - Tieflings
+    - that someone will take/steal the strange crystal that fell from the sky near their house 
+    - that someone will read their diary 
+    - losing a precious family heirloom 
+    - that their loved one won't come back from the war 
+    - catching bad luck from a foreigner 
+    - catching disease from a lizard folk, teifling, dwarf, or halfling 
+    - being bewitched by a Drow 
+    - witches (female spellcasters) 
+    - having their luck stolen by a halfling 
+    - being trampled by a horse 
+    - being shot by a crossbow 
+    - being killed in a brawl 
+    - law enforcement 
+    - the town mortician/undertaker 
+    - those with an obvious physical deformity 
+    - the sight and smell of blood 
+    - large flocks or swarms of creatures 
+    - sharp teeth and apex predators 
+    - that 1 out of 3 children is definitely a goblin in disguise, there is no way of knowing for sure, so we best just keep kids at bay 
+    - facing south while drinking a liquid, lest their heart will stop like mother’s did 
+    - the moonlight 
+    - not being remembered
+    - public embarrassment
+    - being shown up by the opposite sex
+    - a terrifying specter, known only as "The Boogeyman" 
+    - having a dog sicced on them 
+    - being made to drink unsavory substances 
+    - swimming 
+    - heartbreak. Never again...
+    - illness of any kind
+    - being swindled or tricked
+    - being laughed at
+    - whoever was here just before you- they were bone-chillingly terrifying
+    - any other race 
+    - losing social standing with the royal family
+    - getting discovered for having recently murdered someone
+    - being wrong or incorrect about anything
+    - growing old and fragile
+    - tests. Of any kind
+  motivation:
+    - Gold. This PC is desperate to earn coin. He's a good guy who's made some bad choices lately and is willing to work to earn it.
+    - Gold. This PC is a lazy, feckless, layabout with an incredibly charming personality. He can put out a sob story to melt the hardest heart out of a few silvers.
+    - Gold. This PC is a shrewd business woman, who never gets the short end of a negotiation. She can get you rare items but the price is exorbitant.
+    - Attention. This PC is a one upper. Anything you can do, she can do better, and has, twice, at least to hear her speak of it.
+    - Attention. This PC is always flexing his muscles and combing his hair, and asking people if they've ever seen anyone so marvelous.
+    - Attention. This PC is loud and crude and vulgar. He makes inappropriate comments about women and belittles men, loudly and with no care about who hears it.
+    - Food. this NPC is a gourmet, always searching for the best cheese, the best wine... Compatible with the money motivation
+    - Heroism. this NPC believes he is a hero, and that the actions he takes are for the world. As the hero, anything he does can only be the right thing to do. Strong narcisism, and an ability to find a "good" explanation to anything he does or says.
+    - Alcohol. this NPC is constantly in a state of alcoholic stupor/frenziness/niceness. If he happens to be in a alcoholic free situation, he will strive with all his strength to find his next drink
+    - Agoraphobia. this NPC only desires to be left alone, to find a place where nobody will bother him or try to become close to him. Could become violent if approached the wrong way, or try to help if it makes the heroes go away quicker
+    - Altruism. this character strives to help the others, especially the weak. Taking care of an orphanage, providing charity...
+    - Love. they have been alone in the wilderness for a long time, but returned to civilization in search of companionship.
+    - Love. they prize each new romantic companion, counting "conquests" with stitches on the arm of their jacket. At least, that is what they claim the marks on their sleeve are counting.
+    - Love. since they announced their chosen profession, their father has been distant sand, at times, cruel. They want to prove their worth to earn his trust.
+    - Something lost. the family's prized antique sword had only sentimental value but it is a matter of honor to retrieve it.
+    - Something lost. their child left to play in the woods and didn't come back. Still, they know in their heart that the child is out there somewhere, alive, waiting for them.
+    - Something lost. their former lover left town but promised to write every week. For the past month, there have been no letters. Something is wrong.
+    - Sobrenatural. ever since the NPC met the PC's, he/she feels a strong urge to help them and can't quite explain why.
+    - Safety. some strange fungus has been growing on their back, and they are desperately searching for a cure while also trying to keep it a secret
+    - Revenge. My name is Inigo Montoya. You killed my father. Prepare to die.
+    - Passion. the NPC is vigorously and even violently in favor of a cause and believes the PC to be so as well.
+    - Notoriety. He sees the adventuring group as a way to gain fame and fortune and will do anything to become a member.
+    - Research. Her study involves a creature or place the party has seen or is going. She trades information but drills the party on the specific details of their experience
+    - Reputation. As a merchant with a reputation for quality goods, he puts this at the top of his priority list. He refuses to trade in low quality goods of any kind.
+    - Paranoia. this person did something bad and is worried someone will find out.
+    - Paranoia. this person wronged a powerful nobleman and now assumes everyone is an assassin.
+    - Thrill. there is no challenge that this person won't accept, whether that be wrestling a bear, climbing to the peak of the bell tower, or testing an unknown potion's effects.
+    - Security. this person has crates of salted pork, barrels of wheat grain, a cold cellar stacked with sacks of root vegetables, and enough firewood split and seasoned to last through the harshest and longest winter.
+    - Security. this merchant keeps all his wares under lock and key. Not only that, they sell some of the finest locks in the kingdom; most require two different keys and are designed to 'break' stuck shut when attempted to be picked.
+    - Security. Financial. This person has immense wealth hidden away and is extremely frugal, usually attempting to barter down even a few coppers off the price of any purchase. "A copper saved is a copper earned!"
+    - Sickness. this character suffers from a mysterious/rare/legendary sickness, which he is trying to cure.
+    - Contagious. the character suffers from a curse/mutation which can be give to others. Unable to bear this alone, he wants to give it to others and forge his own community.
+    - Immortality. this characters suffers from being an Immortal, due to fate/curse/luck/joke of the gods. He wishes to find a way to die, which might or might not be known to him.
+    - Collector. this eccentric and generally rich NPC cannot bear the idea of it's collection lacking a piece. Good choice for fetching plants/animals quests in far areas or stealing rare artifacts.
+    - Survivalist. wants to satisfy one or all of the basic human needs . a place to sleep, food and water, clothes. Careful that he doesn't bite the hand that feed him.
+    - Collector. (Vanity) seeks rare items, not as part of a set, but just to have because no one else does.
+    - (un)holy zealotry. This person believes what they are doing is a mission gifted to them by their god or patron (in the case of warlocks) despite potential evidence to the contrary.
+    - (un)holy purpose. This person DID have a purpose given to them by their god/patron and are fullfilling it out of loyalty
+    - Fear. This person is terrified of someone. That someone has given them a task. The NPC will try their best to fulfill the task so they don't get punished.
+    - Wanderlust. This person just wants to travel, see the world, meet new people, &amp; experience new things.
+    - Hedonism. This person just seeks to have a good time
+    - Hoarder / Packrat. This person just cant stand to throw anything away. As soon as you get rid of it, that's when you'll need it.
+    - Serve a Purpose. This person just wants to be a part of something greater than themselves. Purpose may involve (church, king, rebellion, state, the greater good, unifying the country, freeing the people, etc)
+    - Needs Writing Material. This person is trying to write a book or play. They have run out of ideas, so they seek new ideas where ever they can find them.
+    - Sense of Duty. Honor and duty is everything.
+    - Redemption. This person has done things, bad things, in their past. They seek to correct the mistakes of their past. If they can not right the wrongs of their past, they seek to help others.
+    - Insanity. Motivations change like minute to minute with no rhyme or reason.
+    - Insanity. This person is desperately trying to ignore the voices in their head.
+    - Desire to be the best. constantly seeking greater challenges to become the best at what they do
+    - Fan boy / girl. desire to be around those who are famous, powerful, revered, etc...
+    - Monster. This person has a strong desire to do Bad Things. They have chosen to limit their victims to bad people.
+    - Revolutionary. Desire to change the (government, guild, nation, system, world)
+    - Generosity. This person grew up dirt poor, and so now they share their modest wealth with those who need it most.
+    - Generosity. This person grew up as a laborer, back breaking work in the fields, and so now they spread their substantial wealth among the working class, offering above average wages and respectful working conditions.
+    - Generosity. This person grew up ridiculously wealthy and only recently learned that there are people who are poor. They have decided to be extremely philanthropic, giving money to whomever asks, though they do work up written contracts with the recipient to assure that the money goes to good use.
+    - Gluttony. This person grew up hungry, and now fears ever going without food again. They'll eat as much as is offered and ask for seconds. As such, they are well able to identify various rare ingredients by smell and taste, and are highly sought after by the Aristocracy to be food taster.
+    - Sloth. This person lives to nap, never having done a full day's work in their life. They rarely leave their hovel 'cept to visit the tavern when they hear someone else is buying. Then they'll sit on the same stool all night, often dozing off for an hour at a time.
+    - Make Babies. One can never have enough offspring, and babies are so CUTE! The more children, the better chance one will become wealthy and take care of me in my old age... right?
+    - Leaf on the Wind. This person has no particularly strong motivations. They just seem to get caught up & dragged along by events.
+  disposition:
+      - able
+      - abnormal
+      - above average
+      - absent-minded
+      - adventurous
+      - affectionate
+      - agile
+      - agreeable
+      - alert
+      - amazing
+      - ambitious
+      - amiable
+      - amusing
+      - analytical
+      - angelic
+      - apathetic
+      - apprehensive
+      - ardent
+      - artificial
+      - artistic
+      - assertive
+      - attentive
+      - average
+      - awesome
+      - awful
+      - balanced
+      - beautiful
+      - below average
+      - beneficent
+      - blue
+      - blunt
+      - boisterous
+      - brave
+      - bright
+      - brilliant
+      - buff
+      - callous
+      - candid
+      - cantankerous
+      - capable
+      - careful
+      - careless
+      - caustic
+      - cautious
+      - charming
+      - cheerful
+      - chic
+      - childish
+      - childlike
+      - churlish
+      - circumspect
+      - civil
+      - clean
+      - clever
+      - clumsy
+      - coherent
+      - cold
+      - competent
+      - composed
+      - conceited
+      - condescending
+      - confident
+      - confused
+      - conscientious
+      - considerate
+      - content
+      - cool
+      - cool-headed
+      - cooperative
+      - cordial
+      - courageous
+      - cowardly
+      - crabby
+      - crafty
+      - cranky
+      - crass
+      - critical
+      - cruel
+      - curious
+      - cynical
+      - dainty
+      - decisive
+      - deep
+      - deferential
+      - deft
+      - delicate
+      - delightful
+      - demonic
+      - demure
+      - dependent
+      - depressed
+      - devoted
+      - dextrous
+      - diligent
+      - direct
+      - dirty
+      - disagreeable
+      - discerning
+      - discreet
+      - disruptive
+      - distant
+      - distraught
+      - distrustful
+      - dowdy
+      - dramatic
+      - dreary
+      - drowsy
+      - drugged
+      - drunk
+      - dull
+      - dutiful
+      - eager
+      - earnest
+      - easy-going
+      - efficient
+      - egotistical
+      - elfin
+      - emotional
+      - energetic
+      - enterprising
+      - enthusiastic
+      - evasive
+      - even-tempered
+      - exacting
+      - excellent
+      - excitable
+      - experienced
+      - fabulous
+      - fastidious
+      - ferocious
+      - fervent
+      - fiery
+      - flabby
+      - flaky
+      - flashy
+      - frank
+      - friendly
+      - funny
+      - fussy
+      - generous
+      - gentle
+      - gloomy
+      - gluttonous
+      - good
+      - grave
+      - great
+      - groggy
+      - grouchy
+      - guarded
+      - hateful
+      - hearty
+      - helpful
+      - hesitant
+      - hot-headed
+      - hypercritical
+      - hysterical
+      - idiotic
+      - idle
+      - illogical
+      - imaginative
+      - immature
+      - immodest
+      - impatient
+      - imperturbable
+      - impetuous
+      - impractical
+      - impressionable
+      - impressive
+      - impulsive
+      - inactive
+      - incisive
+      - incompetent
+      - inconsiderate
+      - inconsistent
+      - indefatigable
+      - independent
+      - indiscreet
+      - indolent
+      - industrious
+      - inexperienced
+      - insensitive
+      - inspiring
+      - intelligent
+      - interesting
+      - intolerant
+      - inventive
+      - irascible
+      - irritable
+      - irritating
+      - J-K
+      - jocular
+      - jovial
+      - joyous
+      - judgmental
+      - keen
+      - kind
+      - lame
+      - lazy
+      - lean
+      - leery
+      - lethargic
+      - level-headed
+      - listless
+      - lithe
+      - lively
+      - local
+      - logical
+      - long-winded
+      - lovable
+      - love-lorn
+      - lovely
+      - maternal
+      - mature
+      - mean
+      - meddlesome
+      - mercurial
+      - methodical
+      - meticulous
+      - mild
+      - miserable
+      - modest
+      - moronic
+      - morose
+      - motivated
+      - musical
+      - naive
+      - nasty
+      - natural
+      - naughty
+      - negative
+      - nervous
+      - noisy
+      - normal
+      - nosy
+      - numb
+      - obliging
+      - obnoxious
+      - old-fashioned
+      - one-sided
+      - orderly
+      - ostentatious
+      - outgoing
+      - outspoken
+      - passionate
+      - passive
+      - paternal
+      - paternalistic
+      - patient
+      - peaceful
+      - peevish
+      - pensive
+      - persevering
+      - persnickety
+      - petulant
+      - picky
+      - plain
+      - plain-speaking
+      - playful
+      - pleasant
+      - plucky
+      - polite
+      - popular
+      - positive
+      - powerful
+      - practical
+      - prejudiced
+      - pretty
+      - proficient
+      - proud
+      - provocative
+      - prudent
+      - punctual
+      - quarrelsome
+      - querulous
+      - quick
+      - quick-tempered
+      - quiet
+      - realistic
+      - reassuring
+      - reclusive
+      - reliable
+      - reluctant
+      - resentful
+      - reserved
+      - resigned
+      - resourceful
+      - respected
+      - respectful
+      - responsible
+      - restless
+      - revered
+      - ridiculous
+      - sad
+      - sassy
+      - saucy
+      - sedate
+      - self-assured
+      - selfish
+      - sensible
+      - sensitive
+      - sentimental
+      - serene
+      - serious
+      - sharp
+      - short-tempered
+      - shrewd
+      - shy
+      - silly
+      - sincere
+      - sleepy
+      - slight
+      - sloppy
+      - slothful
+      - slovenly
+      - slow
+      - smart
+      - snazzy
+      - sneering
+      - snobby
+      - sober
+      - somber
+      - sophisticated
+      - soulful
+      - soulless
+      - sour
+      - spirited
+      - spiteful
+      - stable
+      - staid
+      - steady
+      - stern
+      - stoic
+      - striking
+      - strong
+      - stupid
+      - sturdy
+      - subtle
+      - sulky
+      - sullen
+      - supercilious
+      - superficial
+      - surly
+      - suspicious
+      - sweet
+      - tactful
+      - tactless
+      - talented
+      - testy
+      - thinking
+      - thoughtful
+      - thoughtless
+      - timid
+      - tired
+      - tolerant
+      - touchy
+      - tranquil
+      - ugly
+      - unaffected
+      - unbalanced
+      - uncertain
+      - uncooperative
+      - undependable
+      - unemotional
+      - unfriendly
+      - unguarded
+      - unhelpful
+      - unimaginative
+      - unmotivated
+      - unpleasant
+      - unpopular
+      - unreliable
+      - unsophisticated
+      - unstable
+      - unsure
+      - unthinking
+      - unwilling
+      - venal
+      - versatile
+      - vigilant
+      - volcanic
+      - vulnerable
+      - warm
+      - warmhearted
+      - wary
+      - watchful
+      - weak
+      - well-behaved
+      - well-developed
+      - well-intentioned
+      - well-respected
+      - well-rounded
+      - willing
+      - wonderful
+      - zealous
+script: "[pronoun] is a (race) with (eyes) eyes and (hair) hair. [pronoun] is (disposition), (disposition) and (alignment) aligned. [pronoun] wears (wears). [pronoun] (background_trait). [pronoun] fears (fears).\n\nMotivation - (motivation)"

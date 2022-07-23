@@ -1,0 +1,12 @@
+type: script
+script: here's something for you - {item} and {itema}
+data: 
+  item: 
+    - one 
+    - two
+    - three
+  itema: 
+    - a 
+    - b
+    - c
+

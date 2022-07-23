@@ -1,0 +1,11 @@
+type: list
+items: 
+  - Human
+  - Elf
+  - Half-Elf
+  - Half-Orc
+  - Halfling
+  - Dwarf
+  - Goliath
+  - Tiefling
+  - Gnome

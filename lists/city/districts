@@ -1,0 +1,31 @@
+type: list
+items:
+  - Slums.
+  - Residential district, poor.
+  - Residential district, middle class.
+  - Residential district, upper class.
+  - Palace district.
+  - Official / Political / Government
+  - Temples / Shrines district.
+  - Crafting district.
+  - Docks district.
+  - Riverfront district.
+  - Harbor district.
+  - University district.
+  - Education/schools/library district.
+  - Military district.
+  - Market district.
+  - Garden/Parks/Zoo district.
+  - Monument district.
+  - Necropolis/Cemetery.
+  - Theater district.
+  - Civic center.
+  - Ethnic enclave.
+  - Foreign enclave.
+  - Farmlands
+  - Arena / Coliseum / Fighting / Sport
+  - Jail / Prisons
+  - Masonry / Construction
+  - Finance / Banks
+  - Inns / Taverns / Hangouts 
+  - Guilds (Thieves, Merchants, Mages, ...)

@@ -1,0 +1,16 @@
+type: files
+items: 
+    - city/geography
+    - city/resources
+    - city/culture
+    - city/government
+    - city/history
+    - city/threats
+    - city/defenses
+    - city/law-enforcement
+    - city/power-players
+    - city/landmarks
+    - city/districts
+    - city/trade
+    - modern-city-districts
+
