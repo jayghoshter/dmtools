@@ -6,10 +6,12 @@
     Input files must be in yaml in the following format.
 
     ## Standard format
-    type: <'list'|'multilist'|'files'>
+    type: <'list'|'multilist'|'files'|'script'>
     times: <rollstring>
     pick: <int>
     items: <list of items>
+    script: <str with () delimited keywords substituted from data>
+    data: key-list dictionary for use with script
 
     ## Dice format for backwards compatibility with roland
     dice: <rollstring>
@@ -24,13 +26,15 @@
 
 """
 
-import yaml
+# import yaml
+from ruamel.yaml import YAML
 import random
 from roll import roll
 from pyfzf.pyfzf import FzfPrompt
 from pathlib import Path
 from random import seed
 from plumbum.commands.processes import ProcessExecutionError
+import textwrap
 
 # from itertools import chain
 
@@ -52,8 +56,7 @@ def load_file(fname):
     Load the yaml file
     """
     config = {}
-    with open(fname) as inputfile:
-        config = yaml.load(inputfile, Loader=yaml.FullLoader)
+    config = YAML(typ='safe').load(Path(fname))
     return config
 
 def process(config):
@@ -85,7 +88,23 @@ def process(config):
         ## NOTE: picks all listed files by default
         files = config.get('items')
         for subfile in files:
+            print(f"{subfile}: ", end="")
             process(load_file(folder / subfile))
+    elif datatype == 'script': 
+        # NOTE: Use brackets () to surround keys, where keys = actual keys from the data dictionary that will be substituted for one of the values in the corresponding list.
+        # NOTE: [] => Replace all instances with same value. () => generate new values per instance
+        # TODO: allow key values to be metalists or whatever i'm calling them. Also allow probability distribution.
+        script = config.get('script')
+        data = config.get('data')
+        times = roll(str(config.get('times', 1)))
+        for _ in range(times):
+            final = script
+            for key,items in data.items(): 
+                final = final.replace(f'[{key}]', random.choice(items))
+                while f'({key})' in final: 
+                    final = final.replace(f'({key})', random.choice(items), 1)
+            print(textwrap.fill(final, 80))
+            print('---')
     elif dice:
         ## Simple dice lists with dice ranges
         times = roll(str(config.get('times', 1)))

@@ -7,9 +7,15 @@
 set -euo pipefail
 
 scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
-file="../DnDAppFiles/Compendiums/Full Compendium.xml"
-LIST="$scriptDir/$file"
+file="Compendiums/Full Compendium.xml"
+LIST="$HOME/.cache/dandy/DnDAppFiles/$file"
+# Only run once, not in a loop
 SINGLEMODE=""
+# Print out to stdout instead of using pager
+PRINTMODE=""
+# Select the first item found
+FIRSTMODE=""
+
 
 POSITIONAL=()
 while [[ $# -gt 0 ]]
@@ -20,6 +26,15 @@ do
         -s|--single)
             SINGLEMODE="ON"
             shift # past value
+            ;;
+        -p|--print)
+            PRINTMODE="ON"
+            SINGLEMODE="ON"
+            shift 
+            ;;
+        -f|--first)
+            FIRSTMODE="ON"
+            shift
             ;;
         *)    # unknown option
             POSITIONAL+=("$1") # save it in an array for later
@@ -32,10 +47,18 @@ set -- "${POSITIONAL[@]}" # restore positional parameters
 
 TAG="$1"
 QUERY="${2:-}"
-name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf -1 --bind esc:ignore -q "$QUERY")
+
+PREVIEW="fdnd $TAG -f -p {} | fold -s"
+
+if [[ "$FIRSTMODE" == "ON" ]]; then
+    name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf -1 --filter "$QUERY" --bind esc:ignore -q "$QUERY" --preview "$PREVIEW" | head -n 1)
+else
+    name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf -1 --bind esc:ignore --preview "$PREVIEW" -q "$QUERY")
+fi
+
 while [ -n "$name" ]; do
     data=$(xq -r --arg n "$name" '.compendium.'"$TAG"'[] | select(.name == $n)' "$LIST")
-    echo "$data" | grep -i --color=always -e "^" \
+    out=$(echo "$data" | grep -i --color=always -e "^" \
             -e "[0-9]\+d[0-9]\+" \
             -e "saving throw" \
             -e "DC [0-9]*" \
@@ -48,12 +71,23 @@ while [ -n "$name" ]; do
             -e "damage" \
             -e "acid\|bludgeoning\|cold\|fire\|force\|lightning\|necrotic\|piercing\|poison\|psychic\|radiant\|slashing\|thunder" \
             -e "strength\|dexterity\|constitution\|intelligence\|wisdom\|charisma" \
-            -e "blinded\|charmed\|deafened\|exhaustion\|frightened\|grappled\|incapacitated\|invisible\|paralyzed\|petrified\|poisoned\|prone\|restrained\|stunned\|unconscious" \
-            | less
+            -e "blinded\|charmed\|deafened\|exhaustion\|frightened\|grappled\|incapacitated\|invisible\|paralyzed\|petrified\|poisoned\|prone\|restrained\|stunned\|unconscious")
+
+    if [[ "$PRINTMODE" == "ON" ]]; then
+        echo "$out"
+    else 
+        echo "$out" | less
+    fi
 
     if [[ "$SINGLEMODE" == "ON" ]]; then
         name=""
     else
-        name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore -q "$QUERY")
+        # name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf --bind esc:ignore -q "$QUERY")
+
+        if [[ "$FIRSTMODE" == "ON" ]]; then
+            name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf -1 --filter "$QUERY" --bind esc:ignore --preview "$PREVIEW" -q "$QUERY" | head -n 1)
+        else
+            name=$(xq -r '.compendium.'"$TAG"'[].name' "$LIST" | fzf -1 --bind esc:ignore --preview "$PREVIEW" -q "$QUERY")
+        fi
     fi
 done

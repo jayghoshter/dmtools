@@ -10,7 +10,7 @@ scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 file="../DnDAppFiles/Compendiums/Full Compendium.xml"
 file="$scriptDir/$file"
 
-# DATA=$(xq -r --arg n "$1" '.compendium.class[] | select(.name == $n) | .autolevel[].feature | (if type=="array" then .[] else . end) ' "$file")
+DATA=$(xq -r --arg n "$1" '.compendium.class[] | select(.name == $n) | .autolevel[].feature | (if type=="array" then .[] else . end) ' "$file")
 
 feature=$(echo "$DATA" | jq -r '.name' | sed '/null/d' | awk '!visited[$0]++' | fzf --bind esc:ignore)
 echo "$DATA" | jq -r --arg f "$feature" 'select(.name == $f) ' 
